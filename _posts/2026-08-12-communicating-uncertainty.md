@@ -1,5 +1,6 @@
 ---
 title: "Demo: Notes on Communicating Uncertainty"
+published: false
 date: 2026-08-12 10:00:00 +0000
 author: "Your Name"
 description: "Three practical principles for making uncertainty visible without making a result unreadable."
@@ -29,4 +30,3 @@ Observed spread and uncertainty in an estimate answer different questions. Label
 Do not make readers search for the caveat. Place the boundary of a claim in the same paragraph, figure caption, or interaction as the result it qualifies.
 
 These principles are simple, but applying them consistently changes how confidently a technical result can be used.
-

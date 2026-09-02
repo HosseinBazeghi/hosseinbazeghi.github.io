@@ -1,5 +1,6 @@
 ---
 title: "Demo: From Model Output to a Better Decision"
+published: false
 date: 2026-07-02 14:00:00 +0000
 author: "Your Name"
 description: "A short field note on designing research around the decision that follows a model."
@@ -27,4 +28,3 @@ False positives and false negatives rarely have equal consequences. Evaluation s
 A result is most useful when a reader can inspect its important evidence, assumptions, and sensitivity without leaving the task at hand.
 
 That decision-first perspective often produces a smaller, clearer, and more credible research system.
-

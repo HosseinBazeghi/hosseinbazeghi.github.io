@@ -1,47 +1,83 @@
-# Demo publications — replace these records with your own.
-- id: rivera-2026-reliable
+- id: gicev-2026-vertical-shear-stresses
   type: Journal Articles
-  title: "Reliable inference for complex systems under limited observations"
-  authors: "Your Name, A. Collaborator, B. Researcher"
-  venue: "Journal of Example Research"
+  title: "Vertical and shear stresses at the base of a building on a deformable foundation excited by an incident P-wave pulse: Linear and nonlinear soil"
+  authors: "Vlado Gičev, Hossein Bazeghi Kisomi, Mihailo D. Trifunac, Reza S. Jalali, Maria I. Todorovska"
+  venue: "Soil Dynamics and Earthquake Engineering"
   year: 2026
-  volume: "12"
-  issue: "3"
-  pages: "101–118"
-  doi: "https://doi.org/10.0000/example.2026.001"
-  pdf: "/assets/documents/demo-paper.pdf"
-  code: "https://github.com/YOUR-USERNAME/example-project"
-  dataset: "https://doi.org/10.0000/example-data"
-  project: "/projects/example-research-project/"
+  volume: "203"
+  pages: "110048"
+  doi: "https://doi.org/10.1016/j.soildyn.2025.110048"
   featured: true
-  citation: "Your Name, A. Collaborator, and B. Researcher. Reliable inference for complex systems under limited observations. Journal of Example Research, 12(3):101–118, 2026."
+  citation: "Gičev, V., Bazeghi Kisomi, H., Trifunac, M. D., Jalali, R. S., and Todorovska, M. I. (2026). Vertical and shear stresses at the base of a building on a deformable foundation excited by an incident P-wave pulse: Linear and nonlinear soil. Soil Dynamics and Earthquake Engineering, 203, 110048."
   bibtex: |
-    @article{yourname2026reliable,
-      title   = {Reliable inference for complex systems under limited observations},
-      author  = {Your Name and Collaborator, A. and Researcher, B.},
-      journal = {Journal of Example Research},
+    @article{gicev2026vertical,
+      title   = {Vertical and shear stresses at the base of a building on a deformable foundation excited by an incident P-wave pulse: Linear and nonlinear soil},
+      author  = {Gi\v{c}ev, Vlado and Bazeghi Kisomi, Hossein and Trifunac, Mihailo D. and Jalali, Reza S. and Todorovska, Maria I.},
+      journal = {Soil Dynamics and Earthquake Engineering},
+      volume  = {203},
+      pages   = {110048},
       year    = {2026},
-      volume  = {12},
-      number  = {3},
-      pages   = {101--118}
+      doi     = {10.1016/j.soildyn.2025.110048}
     }
 
-- id: rivera-2025-interfaces
+- id: cruz-2024-digital-twin
   type: Conference Papers
-  title: "Interfaces for communicating uncertainty in technical decisions"
-  authors: "Your Name, C. Designer"
-  venue: "Proceedings of the Example Technical Conference"
-  year: 2025
-  doi: "https://doi.org/10.0000/example.2025.014"
-  slides: "https://docs.google.com/presentation/d/YOUR-FILE-ID/edit"
-  video: "https://www.youtube.com/watch?v=VIDEO_ID"
+  title: "Soil-piles-basement-structure digital twin of a skyscraper excited by earthquake waves"
+  authors: "Lichiel Cruz, Hossein Bazeghi Kisomi, Maria I. Todorovska, Mingyang Chen, Mihailo D. Trifunac"
+  venue: "6th Eurasian Conference on OpenSees (EOSD 2024), Beijing, China"
+  year: 2024
+  link: "https://www.researchgate.net/publication/382619637_Soil-piles-basement-structure_digital_twin_of_a_skyscraper_excited_by_earthquake_waves"
   featured: true
-  citation: "Your Name and C. Designer. Interfaces for communicating uncertainty in technical decisions. In Proceedings of the Example Technical Conference, 2025."
+  citation: "Cruz, L., Bazeghi Kisomi, H., Todorovska, M. I., Chen, M., and Trifunac, M. D. (2024). Soil-piles-basement-structure digital twin of a skyscraper excited by earthquake waves. 6th Eurasian Conference on OpenSees, Beijing, China."
   bibtex: |
-    @inproceedings{yourname2025interfaces,
-      title     = {Interfaces for communicating uncertainty in technical decisions},
-      author    = {Your Name and Designer, C.},
-      booktitle = {Proceedings of the Example Technical Conference},
-      year      = {2025}
+    @inproceedings{cruz2024digital,
+      title     = {Soil-piles-basement-structure digital twin of a skyscraper excited by earthquake waves},
+      author    = {Cruz, Lichiel and Bazeghi Kisomi, Hossein and Todorovska, Maria I. and Chen, Mingyang and Trifunac, Mihailo D.},
+      booktitle = {6th Eurasian Conference on OpenSees},
+      address   = {Beijing, China},
+      year      = {2024}
     }
 
+- id: trifunac-2020-cord-rotations
+  type: Journal Articles
+  title: "The contribution of cord rotations to structural response in the near-field"
+  authors: "Mihailo D. Trifunac, Reza S. Jalali, Maria I. Todorovska, Hossein Bazeghi Kisomi"
+  venue: "Soil Dynamics and Earthquake Engineering"
+  year: 2020
+  volume: "139"
+  pages: "106351"
+  doi: "https://doi.org/10.1016/j.soildyn.2020.106351"
+  featured: true
+  citation: "Trifunac, M. D., Jalali, R. S., Todorovska, M. I., and Bazeghi Kisomi, H. (2020). The contribution of cord rotations to structural response in the near-field. Soil Dynamics and Earthquake Engineering, 139, 106351."
+  bibtex: |
+    @article{trifunac2020cord,
+      title   = {The contribution of cord rotations to structural response in the near-field},
+      author  = {Trifunac, Mihailo D. and Jalali, Reza S. and Todorovska, Maria I. and Bazeghi Kisomi, Hossein},
+      journal = {Soil Dynamics and Earthquake Engineering},
+      volume  = {139},
+      pages   = {106351},
+      year    = {2020},
+      doi     = {10.1016/j.soildyn.2020.106351}
+    }
+
+- id: gicev-2019-foundation-flexibility
+  type: Journal Articles
+  title: "Flexibility of foundation increases the base shear and horizontal strains during an out-of-plane response to an SH pulse in linear and nonlinear soil"
+  authors: "Vlado Gičev, Hossein Bazeghi Kisomi, Mihailo D. Trifunac, Reza S. Jalali"
+  venue: "Soil Dynamics and Earthquake Engineering"
+  year: 2019
+  volume: "127"
+  pages: "105837"
+  doi: "https://doi.org/10.1016/j.soildyn.2019.105837"
+  featured: true
+  citation: "Gičev, V., Bazeghi Kisomi, H., Trifunac, M. D., and Jalali, R. S. (2019). Flexibility of foundation increases the base shear and horizontal strains during an out-of-plane response to an SH pulse in linear and nonlinear soil. Soil Dynamics and Earthquake Engineering, 127, 105837."
+  bibtex: |
+    @article{gicev2019flexibility,
+      title   = {Flexibility of foundation increases the base shear and horizontal strains during an out-of-plane response to an SH pulse in linear and nonlinear soil},
+      author  = {Gi\v{c}ev, Vlado and Bazeghi Kisomi, Hossein and Trifunac, Mihailo D. and Jalali, Reza S.},
+      journal = {Soil Dynamics and Earthquake Engineering},
+      volume  = {127},
+      pages   = {105837},
+      year    = {2019},
+      doi     = {10.1016/j.soildyn.2019.105837}
+    }

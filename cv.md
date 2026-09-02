@@ -3,6 +3,7 @@ title: Curriculum Vitae
 eyebrow: Experience & credentials
 description: "A concise web version of my academic and professional record."
 wide: true
+published: false
 ---
 
 <div class="cv-header">

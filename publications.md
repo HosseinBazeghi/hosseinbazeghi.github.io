@@ -1,13 +1,13 @@
 ---
 layout: default
 title: Publications
-description: "Peer-reviewed articles, conference papers, preprints, chapters, and presentations."
+description: "Peer-reviewed articles and conference papers by Hossein Bazeghi Kisomi."
 ---
 <section class="page-shell shell">
   <header class="page-heading">
     <p class="eyebrow">Research output</p>
     <h1>{{ page.title }}</h1>
-    <p class="page-deck">{{ page.description }} Publication records live in one readable YAML file.</p>
+    <p class="page-deck">{{ page.description }} For the most current citation information, visit my <a href="{{ site.social.google_scholar }}">Google Scholar profile</a>.</p>
   </header>
 
   <div class="filter-bar" data-publication-filters aria-label="Publication filters">
@@ -33,4 +33,3 @@ description: "Peer-reviewed articles, conference papers, preprints, chapters, an
   </div>
   <p class="empty-state" data-filter-empty hidden>No publications match those filters.</p>
 </section>
-

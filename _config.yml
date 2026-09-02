@@ -1,30 +1,28 @@
 # ------------------------------------------------------------
 # Site-wide identity — start customizing here.
 # ------------------------------------------------------------
-title: "Your Name"
-tagline: "Researcher · Engineer · Scientist"
-description: "Personal academic website, research portfolio, CV, and technical blog for Your Name."
-url: "hosseinbazeghi.github.io"
+title: "Hossein Bazeghi Kisomi"
+tagline: "PhD Candidate · Earthquake Engineering"
+description: "Academic website of Hossein Bazeghi Kisomi, a PhD candidate at Tianjin University researching soil–structure interaction, wave propagation, and strong ground motion."
+url: "https://hosseinbazeghi.github.io"
 baseurl: "" # For a project site, use "/YOUR-REPOSITORY". For a user site, keep this empty.
 repository: "HosseinBazeghi/hosseinbazeghi.github.io"
 locale: "en_US"
 timezone: "Etc/UTC"
 
 author:
-  name: "Your Name"
-  title: "Researcher / Engineer / Scientist"
-  institution: "Your Institution or Company"
-  email: "you@example.com"
-  location: "City, Country"
-  bio: "I work on research area, with a particular focus on the questions and tools that connect rigorous ideas to useful outcomes."
-  profile_image: "/assets/images/profile-placeholder.svg"
-  profile_image_alt: "Portrait placeholder for Your Name"
+  name: "Hossein Bazeghi Kisomi"
+  title: "PhD Candidate · Earthquake Engineering"
+  institution: "Tianjin University"
+  email: "bazeghi.hossein@gmail.com"
+  location: "Tianjin, China"
+  bio: "I am a PhD candidate in Tianjin University's Strong Motion Observation and Simulation Laboratory, where I investigate soil–structure interaction, seismic wave propagation, and strong ground motion through earthquake-engineering analysis and numerical modeling."
+  profile_image: "/assets/images/hossein-bazeghi-kisomi.png"
+  profile_image_alt: "Portrait of Hossein Bazeghi Kisomi"
 
 social:
-  github: "https://github.com/YOUR-USERNAME"
-  linkedin: "https://www.linkedin.com/in/YOUR-PROFILE"
-  google_scholar: "https://scholar.google.com/citations?user=YOUR-ID"
-  orcid: "https://orcid.org/0000-0000-0000-0000"
+  researchgate: "https://www.researchgate.net/profile/Hossein-Bazeghi-Kisomi?ev=hdr_xprf"
+  google_scholar: "https://scholar.google.com/citations?user=nd6QsZEAAAAJ&hl=en"
 
 cv_path: "/assets/documents/cv.pdf"
 default_social_image: "/assets/images/academic-og.png"
@@ -58,7 +56,7 @@ defaults:
       type: "posts"
     values:
       layout: post
-      author: "Your Name"
+      author: "Hossein Bazeghi Kisomi"
       toc: true
   - scope:
       path: ""

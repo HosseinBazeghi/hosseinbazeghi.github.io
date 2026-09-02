@@ -1,5 +1,6 @@
 ---
 title: "Demo: Transparent Models for Complex Decisions"
+published: false
 description: "An example research project showing how to present a question, method, results, tools, links, and media in one maintainable page."
 date_range: "2025–2026"
 status: "Demo"

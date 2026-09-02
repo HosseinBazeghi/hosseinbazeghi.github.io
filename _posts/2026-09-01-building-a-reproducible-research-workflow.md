@@ -1,5 +1,6 @@
 ---
 title: "Demo: Building a Reproducible Research Workflow"
+published: false
 date: 2026-09-01 09:00:00 +0000
 author: "Your Name"
 description: "A complete example technical article with equations, figures, code, tables, citations, YouTube, and Google Drive content."
@@ -122,4 +123,3 @@ Before publishing, rebuild every generated figure from a clean checkout, record 
 That habit makes the post more valuable, and it makes the underlying research easier to revisit months later.
 
 [^assumptions]: Kramdown automatically renders Markdown footnotes like this one and links readers back to the reference point.
-

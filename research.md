@@ -1,56 +1,29 @@
 ---
 title: Research / Work
-eyebrow: Research agenda
-description: "Problems I study, methods I develop, and the evidence I use to connect ideas with practice."
-math: true
-gallery:
-  - src: /assets/figures/example-results.svg
-    alt: "Example performance curves comparing three methods"
-    caption: "Performance across increasing data availability."
-  - src: /assets/figures/research-pipeline.svg
-    alt: "Diagram of a reproducible research pipeline"
-    caption: "A traceable path from question to evidence."
+eyebrow: Research focus
+description: "Research on soil–structure interaction, seismic wave propagation, strong ground motion, earthquake engineering, and numerical modeling."
 ---
 
-> **Demo research page:** Replace the topic names, text, links, and figures with your own work. Equations, reusable figures, galleries, videos, repositories, and downloads are already supported.
+My research examines how soil, foundations, and structures interact under earthquake excitation. At Tianjin University's **Strong Motion Observation and Simulation Laboratory**, I use earthquake-engineering analysis and numerical modeling to study the propagation of seismic waves and their effects on structural response.
 
-## Theme 1 — Reliable learning from limited observations
+## Soil–structure interaction
 
-Many real systems provide fewer clean observations than our models would like. This theme studies how assumptions, priors, constraints, and uncertainty estimates can be combined without hiding what the data cannot tell us.
+I study the coupled behavior of soil, foundations, and structures during seismic loading. This includes investigating how soil properties and foundation flexibility influence the forces, deformations, and motion experienced by a structure.
 
-One simple expression for the balance is a regularized objective:
+## Seismic wave propagation
 
-$$
-\hat{\theta} = \arg\min_{\theta}\; \mathcal{L}(y, f_{\theta}(x)) + \lambda\,\Omega(\theta).
-$$
+Wave propagation provides the physical connection between earthquake excitation and structural response. My work considers how seismic waves travel through the soil and interact with deformable foundations and structural systems.
 
-The first term rewards agreement with observations; the second encodes a preference for solutions that remain plausible or interpretable. My work asks how the choice of $\Omega$ affects reliability outside the training distribution.
+## Strong ground motion
 
-{% include figure.html src="/assets/figures/example-results.svg" alt="Example plot showing three performance curves across sample sizes" number="1" caption="Demo results comparing a proposed method with two baselines. Replace this SVG with your own PNG, JPG, GIF, WebP, or SVG figure." class="full" width="1200" height="700" %}
+I am interested in the characteristics of strong ground motion and the ways in which earthquake-wave incidence, spatial variation, and local soil behavior affect the motion transmitted to structures.
 
-**Example outputs:** [code repository](https://github.com/YOUR-USERNAME/example-project) · [download sample data]({{ '/assets/documents/demo-paper.pdf' | relative_url }}) · [related publication]({{ '/publications/' | relative_url }})
+## Earthquake engineering
 
-## Theme 2 — Reproducible scientific workflows
+My research contributes to earthquake engineering by connecting the mechanics of seismic excitation with the analysis of soil–foundation–structure systems. The goal is to support a clearer and more reliable understanding of structural response during earthquakes.
 
-Research results are easier to trust when the path from raw data to final figure is explicit. I build small, testable stages for ingestion, validation, modeling, evaluation, and communication.
+## Numerical modeling
 
-{% include figure.html src="/assets/figures/research-pipeline.svg" alt="Five-stage workflow from research question through data, model, validation, and communication" number="2" caption="A reproducible workflow keeps every transformation visible and testable." class="centered" width="1200" height="620" %}
+Numerical models allow complex soil and structural behavior to be studied systematically. I use them to examine wave propagation, foundation flexibility, soil nonlinearity, and the resulting structural response under controlled earthquake-excitation scenarios.
 
-The [featured project]({{ '/projects/example-research-project/' | relative_url }}) shows how a topic can combine a narrative, equations, figures, code, a repository, and downloadable material.
-
-## Theme 3 — Communicating uncertainty
-
-The final interface is part of the scientific method. I study how visual encodings, language, and interaction shape whether readers understand a model's limits as well as its headline result.
-
-{% include gallery.html images=page.gallery label="Example research figure gallery" %}
-
-### Talks and demonstrations
-
-The reusable includes below load external media only after a visitor chooses to open it, which keeps initial page loads fast.
-
-{% include youtube.html url="https://www.youtube.com/watch?v=VIDEO_ID" title="Demo research talk — replace VIDEO_ID" %}
-
-{% include google-drive.html url="https://drive.google.com/file/d/YOUR_FILE_ID/view?usp=sharing" title="Demo Google Drive research video" mode="preview" %}
-
-Google Drive previews work only when the file is shared with **Anyone with the link**. For a simple file button instead of an inline preview, use the `mode="link"` option described in the README.
-
+For peer-reviewed articles and conference work related to these topics, see my [publications]({{ '/publications/' | relative_url }}).

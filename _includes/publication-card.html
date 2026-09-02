@@ -8,6 +8,7 @@
     <p class="publication-item__venue"><em>{{ pub.venue }}</em>{% if pub.volume %}, {{ pub.volume }}{% endif %}{% if pub.issue %}({{ pub.issue }}){% endif %}{% if pub.pages %}: {{ pub.pages }}{% endif %}.</p>
     <div class="link-cluster">
       {% if pub.doi %}<a href="{{ pub.doi }}">DOI</a>{% endif %}
+      {% if pub.link %}<a href="{{ pub.link }}">Publication</a>{% endif %}
       {% if pub.pdf %}<a href="{{ pub.pdf | relative_url }}">PDF</a>{% endif %}
       {% if pub.code %}<a href="{{ pub.code }}">Code</a>{% endif %}
       {% if pub.dataset %}<a href="{{ pub.dataset }}">Dataset</a>{% endif %}
@@ -25,4 +26,3 @@
     {% endunless %}
   </div>
 </article>
-

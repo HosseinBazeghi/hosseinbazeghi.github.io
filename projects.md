@@ -2,6 +2,7 @@
 layout: default
 title: Projects
 description: "Research studies, software, experiments, and collaborations."
+published: false
 ---
 <section class="page-shell shell">
   <header class="page-heading">
@@ -14,4 +15,3 @@ description: "Research studies, software, experiments, and collaborations."
     {% for project in sorted_projects %}{% include project-card.html project=project %}{% endfor %}
   </div>
 </section>
-
