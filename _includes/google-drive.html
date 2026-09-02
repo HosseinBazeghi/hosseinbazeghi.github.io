@@ -1,0 +1,11 @@
+{% assign drive_mode = include.mode | default: 'preview' %}
+{% if drive_mode == 'preview' %}
+  <div class="video-embed drive-embed" data-drive-url="{{ include.url | escape }}" data-title="{{ include.title | default: 'Google Drive preview' | escape }}">
+    <a class="media-placeholder" href="{{ include.url | escape }}">
+      <span class="media-placeholder__play" aria-hidden="true">↗</span>
+      <span><strong>{{ include.title | default: 'Open Google Drive preview' }}</strong><small>Public sharing permission required</small></span>
+    </a>
+  </div>
+{% else %}
+  <a class="button button--secondary file-button" href="{{ include.url | escape }}"><span aria-hidden="true">↓</span> {{ include.title | default: 'Open file on Google Drive' }}</a>
+{% endif %}

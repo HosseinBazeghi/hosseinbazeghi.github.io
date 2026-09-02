@@ -1,0 +1,12 @@
+<div class="figure-gallery"{% if include.label %} aria-label="{{ include.label }}"{% endif %}>
+  {% for image in include.images %}
+    <figure>
+      <button class="figure-zoom" type="button" data-lightbox-trigger data-src="{{ image.src | relative_url }}" data-alt="{{ image.alt | escape }}" data-caption="{{ image.caption | escape }}" aria-label="Enlarge image: {{ image.alt | escape }}">
+        <img src="{{ image.src | relative_url }}" alt="{{ image.alt }}" loading="lazy">
+        <span aria-hidden="true">↗</span>
+      </button>
+      {% if image.caption %}<figcaption>{{ image.caption }}</figcaption>{% endif %}
+    </figure>
+  {% endfor %}
+</div>
+

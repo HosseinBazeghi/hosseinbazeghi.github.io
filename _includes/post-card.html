@@ -1,0 +1,19 @@
+{% assign post = include.post %}
+{% assign words = post.content | strip_html | number_of_words %}
+{% assign minutes = words | divided_by: 220 %}
+{% if minutes < 1 %}{% assign minutes = 1 %}{% endif %}
+<article class="post-card reveal" data-post-card data-title="{{ post.title | downcase | escape }}" data-description="{{ post.description | downcase | escape }}" data-tags="{{ post.tags | join: ' ' | downcase | escape }}" data-category="{{ post.category | default: 'notes' | slugify }}">
+  {% if post.image %}
+    <a class="post-card__image" href="{{ post.url | relative_url }}" tabindex="-1" aria-hidden="true">
+      <img src="{{ post.image | relative_url }}" alt="" loading="lazy" width="960" height="560">
+    </a>
+  {% endif %}
+  <div class="post-card__body">
+    <div class="meta-row"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%b %-d, %Y' }}</time><span>{{ minutes }} min read</span></div>
+    <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+    <p>{{ post.description }}</p>
+    {% if post.tags %}<ul class="tag-list" aria-label="Post tags">{% for tag in post.tags %}<li>{{ tag }}</li>{% endfor %}</ul>{% endif %}
+    <a class="text-link" href="{{ post.url | relative_url }}">Read article <span aria-hidden="true">→</span></a>
+  </div>
+</article>
+

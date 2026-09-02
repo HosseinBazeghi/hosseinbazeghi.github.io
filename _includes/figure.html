@@ -1,0 +1,9 @@
+{% assign figure_class = include.class | default: 'centered' %}
+<figure class="research-figure research-figure--{{ figure_class }}">
+  <button class="figure-zoom" type="button" data-lightbox-trigger data-src="{{ include.src | relative_url }}" data-alt="{{ include.alt | escape }}" data-caption="{{ include.caption | escape }}" aria-label="Enlarge figure: {{ include.alt | escape }}">
+    <img src="{{ include.src | relative_url }}" alt="{{ include.alt }}" loading="lazy"{% if include.width %} width="{{ include.width }}"{% endif %}{% if include.height %} height="{{ include.height }}"{% endif %}>
+    <span aria-hidden="true">↗</span>
+  </button>
+  {% if include.caption %}<figcaption>{% if include.number %}<strong>Figure {{ include.number }}.</strong> {% endif %}{{ include.caption }}</figcaption>{% endif %}
+</figure>
+

@@ -1,0 +1,18 @@
+- label: Home
+  url: /
+  exact: true
+- label: About
+  url: /about/
+- label: Research / Work
+  url: /research/
+- label: Projects
+  url: /projects/
+- label: Publications
+  url: /publications/
+- label: Blog
+  url: /blog/
+- label: CV
+  url: /cv/
+- label: Contact
+  url: /contact/
+

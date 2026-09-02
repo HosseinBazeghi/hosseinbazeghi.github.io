@@ -1,0 +1,36 @@
+<a class="skip-link" href="#main-content">Skip to content</a>
+{% assign name_parts = site.author.name | split: ' ' %}
+{% assign first_initial = name_parts.first | slice: 0, 1 %}
+{% assign last_initial = name_parts.last | slice: 0, 1 %}
+<header class="site-header" data-site-header>
+  <div class="shell nav-shell">
+    <a class="site-mark" href="{{ '/' | relative_url }}" aria-label="{{ site.title }} home">
+      <span class="site-mark__monogram" aria-hidden="true">{{ first_initial }}{{ last_initial }}</span>
+      <span class="site-mark__text">
+        <strong>{{ site.author.name }}</strong>
+        <small>{{ site.author.title }}</small>
+      </span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" data-nav-toggle>
+      <span class="sr-only">Toggle navigation</span>
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="primary-nav" id="primary-navigation" aria-label="Primary navigation" data-nav>
+      <ul>
+        {% for item in site.data.navigation %}
+          {% assign active = false %}
+          {% if item.exact and page.url == item.url %}
+            {% assign active = true %}
+          {% elsif item.exact != true and page.url contains item.url %}
+            {% assign active = true %}
+          {% endif %}
+          <li><a href="{{ item.url | relative_url }}"{% if active %} class="is-active" aria-current="page"{% endif %}>{{ item.label }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Switch color theme" title="Switch color theme" data-theme-toggle>
+      <svg class="icon icon-sun" aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41"></path></svg>
+      <svg class="icon icon-moon" aria-hidden="true" viewBox="0 0 24 24"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5 8.5 8.5 0 1 0 20.5 14.2Z"></path></svg>
+    </button>
+  </div>
+</header>

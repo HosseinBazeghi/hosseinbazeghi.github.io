@@ -1,0 +1,28 @@
+---
+layout: default
+---
+<article>
+  <header class="project-hero shell">
+    <div>
+      <a class="back-link" href="{{ '/projects/' | relative_url }}">← All projects</a>
+      <p class="eyebrow">{{ page.date_range }}{% if page.status %} · {{ page.status }}{% endif %}</p>
+      <h1>{{ page.title }}</h1>
+      <p class="page-deck">{{ page.description }}</p>
+      {% if page.tools %}<ul class="tag-list">{% for tool in page.tools %}<li>{{ tool }}</li>{% endfor %}</ul>{% endif %}
+      <div class="button-row">
+        {% if page.github %}<a class="button button--primary" href="{{ page.github }}">GitHub repository ↗</a>{% endif %}
+        {% if page.demo %}<a class="button button--secondary" href="{{ page.demo }}">Live demo ↗</a>{% endif %}
+        {% if page.publication %}<a class="button button--secondary" href="{{ page.publication | relative_url }}">Publication ↗</a>{% endif %}
+        {% if page.video %}<a class="button button--secondary" href="{{ page.video }}">Video ↗</a>{% endif %}
+      </div>
+    </div>
+    {% if page.image %}<img src="{{ page.image | relative_url }}" alt="{{ page.image_alt | default: page.title }}" width="960" height="640">{% endif %}
+  </header>
+  <div class="shell article-grid">
+    <aside class="article-aside" aria-label="Project contents">
+      <p class="eyebrow">On this page</p>
+      <nav class="toc" data-toc data-toc-source=".project-content"></nav>
+    </aside>
+    <div class="prose project-content">{{ content }}</div>
+  </div>
+</article>

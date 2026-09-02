@@ -1,0 +1,90 @@
+# ------------------------------------------------------------
+# Site-wide identity — start customizing here.
+# ------------------------------------------------------------
+title: "Your Name"
+tagline: "Researcher · Engineer · Scientist"
+description: "Personal academic website, research portfolio, CV, and technical blog for Your Name."
+url: "hosseinbazeghi.github.io"
+baseurl: "" # For a project site, use "/YOUR-REPOSITORY". For a user site, keep this empty.
+repository: "HosseinBazeghi/hosseinbazeghi.github.io"
+locale: "en_US"
+timezone: "Etc/UTC"
+
+author:
+  name: "Your Name"
+  title: "Researcher / Engineer / Scientist"
+  institution: "Your Institution or Company"
+  email: "you@example.com"
+  location: "City, Country"
+  bio: "I work on research area, with a particular focus on the questions and tools that connect rigorous ideas to useful outcomes."
+  profile_image: "/assets/images/profile-placeholder.svg"
+  profile_image_alt: "Portrait placeholder for Your Name"
+
+social:
+  github: "https://github.com/YOUR-USERNAME"
+  linkedin: "https://www.linkedin.com/in/YOUR-PROFILE"
+  google_scholar: "https://scholar.google.com/citations?user=YOUR-ID"
+  orcid: "https://orcid.org/0000-0000-0000-0000"
+
+cv_path: "/assets/documents/cv.pdf"
+default_social_image: "/assets/images/academic-og.png"
+
+# ------------------------------------------------------------
+# Jekyll behavior
+# ------------------------------------------------------------
+markdown: kramdown
+highlighter: rouge
+permalink: /blog/:title/
+future: false
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  footnote_nr: 1
+
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: page
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: post
+      author: "Your Name"
+      toc: true
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: project
+
+pagination:
+  enabled: true
+  per_page: 6
+  permalink: "/page/:num/"
+  sort_reverse: true
+  title: ":title — page :num"
+
+plugins:
+  - jekyll-feed
+  - jekyll-paginate-v2
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+feed:
+  path: feed.xml
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - LICENSE
+  - vendor

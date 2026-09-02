@@ -1,0 +1,47 @@
+# Demo publications — replace these records with your own.
+- id: rivera-2026-reliable
+  type: Journal Articles
+  title: "Reliable inference for complex systems under limited observations"
+  authors: "Your Name, A. Collaborator, B. Researcher"
+  venue: "Journal of Example Research"
+  year: 2026
+  volume: "12"
+  issue: "3"
+  pages: "101–118"
+  doi: "https://doi.org/10.0000/example.2026.001"
+  pdf: "/assets/documents/demo-paper.pdf"
+  code: "https://github.com/YOUR-USERNAME/example-project"
+  dataset: "https://doi.org/10.0000/example-data"
+  project: "/projects/example-research-project/"
+  featured: true
+  citation: "Your Name, A. Collaborator, and B. Researcher. Reliable inference for complex systems under limited observations. Journal of Example Research, 12(3):101–118, 2026."
+  bibtex: |
+    @article{yourname2026reliable,
+      title   = {Reliable inference for complex systems under limited observations},
+      author  = {Your Name and Collaborator, A. and Researcher, B.},
+      journal = {Journal of Example Research},
+      year    = {2026},
+      volume  = {12},
+      number  = {3},
+      pages   = {101--118}
+    }
+
+- id: rivera-2025-interfaces
+  type: Conference Papers
+  title: "Interfaces for communicating uncertainty in technical decisions"
+  authors: "Your Name, C. Designer"
+  venue: "Proceedings of the Example Technical Conference"
+  year: 2025
+  doi: "https://doi.org/10.0000/example.2025.014"
+  slides: "https://docs.google.com/presentation/d/YOUR-FILE-ID/edit"
+  video: "https://www.youtube.com/watch?v=VIDEO_ID"
+  featured: true
+  citation: "Your Name and C. Designer. Interfaces for communicating uncertainty in technical decisions. In Proceedings of the Example Technical Conference, 2025."
+  bibtex: |
+    @inproceedings{yourname2025interfaces,
+      title     = {Interfaces for communicating uncertainty in technical decisions},
+      author    = {Your Name and Designer, C.},
+      booktitle = {Proceedings of the Example Technical Conference},
+      year      = {2025}
+    }
+

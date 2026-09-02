@@ -1,0 +1,50 @@
+---
+layout: default
+title: Blog
+description: "Research notes, technical tutorials, field observations, and ideas in progress."
+pagination:
+  enabled: true
+---
+<section class="page-shell shell">
+  <header class="page-heading">
+    <p class="eyebrow">Writing</p>
+    <h1>{{ page.title }}</h1>
+    <p class="page-deck">{{ page.description }} Posts are plain Markdown files with optional figures, equations, code, and video.</p>
+  </header>
+
+  <div class="filter-bar" data-blog-filters aria-label="Blog filters">
+    <label class="search-field">
+      <span class="sr-only">Search posts</span>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg>
+      <input type="search" placeholder="Search titles, summaries, and tags…" data-filter-search>
+    </label>
+    <select data-filter-select aria-label="Filter posts by category">
+      <option value="all">All categories</option>
+      {% assign categories = site.posts | map: 'category' | compact | uniq | sort %}
+      {% for category in categories %}<option value="{{ category | slugify }}">{{ category }}</option>{% endfor %}
+    </select>
+    <button class="filter-button is-active" type="button" data-filter-button="all">All</button>
+    <button class="filter-button" type="button" data-filter-button="research">Research</button>
+    <button class="filter-button" type="button" data-filter-button="methods">Methods</button>
+    <button class="filter-button" type="button" data-filter-button="notes">Notes</button>
+  </div>
+
+  <div class="post-grid">
+    {% assign posts_to_show = paginator.posts | default: site.posts %}
+    {% for post in posts_to_show %}{% include post-card.html post=post %}{% endfor %}
+  </div>
+  <p class="empty-state" data-filter-empty hidden>No posts match that search.</p>
+
+  {% if paginator.total_pages > 1 %}
+  <nav class="pagination" aria-label="Blog pagination">
+    {% if paginator.previous_page %}<a href="{{ paginator.previous_page_path | relative_url }}" aria-label="Previous page">←</a>{% endif %}
+    {% for page_number in (1..paginator.total_pages) %}
+      {% if page_number == paginator.page %}<span class="current" aria-current="page">{{ page_number }}</span>
+      {% elsif page_number == 1 %}<a href="{{ '/blog/' | relative_url }}">1</a>
+      {% else %}<a href="{{ site.pagination.permalink | replace: ':num', page_number | prepend: '/blog' | relative_url }}">{{ page_number }}</a>{% endif %}
+    {% endfor %}
+    {% if paginator.next_page %}<a href="{{ paginator.next_page_path | relative_url }}" aria-label="Next page">→</a>{% endif %}
+  </nav>
+  {% endif %}
+</section>
+

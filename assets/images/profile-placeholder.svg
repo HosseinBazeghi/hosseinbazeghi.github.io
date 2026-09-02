@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1200" viewBox="0 0 1000 1200" role="img" aria-labelledby="title desc">
+  <title id="title">Profile photograph placeholder</title>
+  <desc id="desc">A neutral geometric placeholder marked Your Photo</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#193747"/><stop offset="1" stop-color="#0b6965"/></linearGradient>
+    <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse"><path d="M50 0H0V50" fill="none" stroke="#fff" stroke-opacity=".07"/></pattern>
+  </defs>
+  <rect width="1000" height="1200" fill="url(#bg)"/>
+  <rect width="1000" height="1200" fill="url(#grid)"/>
+  <circle cx="500" cy="435" r="180" fill="#f1eee4" fill-opacity=".88"/>
+  <path d="M170 1080c35-250 158-375 330-375s295 125 330 375" fill="#f1eee4" fill-opacity=".88"/>
+  <text x="500" y="1135" fill="#f1eee4" font-family="Arial, sans-serif" font-size="34" font-weight="700" letter-spacing="8" text-anchor="middle">YOUR PHOTO</text>
+</svg>
+

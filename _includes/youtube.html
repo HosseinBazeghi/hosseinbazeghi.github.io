@@ -1,0 +1,6 @@
+<div class="video-embed youtube-embed" data-youtube-url="{{ include.url | escape }}" data-title="{{ include.title | default: 'YouTube video' | escape }}">
+  <a class="media-placeholder" href="{{ include.url | escape }}">
+    <span class="media-placeholder__play" aria-hidden="true">▶</span>
+    <span><strong>{{ include.title | default: 'Watch video' }}</strong><small>Load from YouTube</small></span>
+  </a>
+</div>

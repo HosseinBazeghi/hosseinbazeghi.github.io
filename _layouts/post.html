@@ -1,0 +1,48 @@
+---
+layout: default
+---
+{% assign words = content | strip_html | number_of_words %}
+{% assign minutes = words | divided_by: 220 %}
+{% if minutes < 1 %}{% assign minutes = 1 %}{% endif %}
+<article class="post">
+  <header class="post-header shell">
+    <a class="back-link" href="{{ '/blog/' | relative_url }}">← All writing</a>
+    {% if page.category %}<p class="eyebrow">{{ page.category }}</p>{% endif %}
+    <h1>{{ page.title }}</h1>
+    {% if page.description %}<p class="page-deck">{{ page.description }}</p>{% endif %}
+    <div class="post-byline">
+      <span>{{ page.author | default: site.author.name }}</span>
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%B %-d, %Y' }}</time>
+      <span>{{ minutes }} min read</span>
+    </div>
+    {% if page.tags %}<ul class="tag-list">{% for tag in page.tags %}<li>{{ tag }}</li>{% endfor %}</ul>{% endif %}
+  </header>
+  {% if page.image %}
+    <div class="post-feature shell"><img src="{{ page.image | relative_url }}" alt="{{ page.image_alt | default: page.title }}" width="1400" height="760"></div>
+  {% endif %}
+  <div class="shell article-grid{% if page.toc == false %} article-grid--no-toc{% endif %}">
+    {% if page.toc != false %}
+      <aside class="article-aside" aria-label="Article table of contents">
+        <p class="eyebrow">In this article</p>
+        <nav class="toc" data-toc data-toc-source=".post-content"></nav>
+      </aside>
+    {% endif %}
+    <div class="prose post-content">{{ content }}</div>
+  </div>
+  <footer class="post-footer shell">
+    <div class="share-row" aria-label="Share this article">
+      <span>Share</span>
+      <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ page.url | absolute_url | url_encode }}">LinkedIn</a>
+      <a href="mailto:?subject={{ page.title | url_encode }}&body={{ page.url | absolute_url | url_encode }}">Email</a>
+      <button type="button" data-copy-url>Copy link</button>
+    </div>
+    <nav class="post-navigation" aria-label="Previous and next articles">
+      {% if page.previous %}<a href="{{ page.previous.url | relative_url }}"><small>Previous</small><strong>← {{ page.previous.title }}</strong></a>{% endif %}
+      {% if page.next %}<a href="{{ page.next.url | relative_url }}"><small>Next</small><strong>{{ page.next.title }} →</strong></a>{% endif %}
+    </nav>
+    {% assign related = site.related_posts | where_exp: 'post', 'post.url != page.url' %}
+    {% if related.size > 0 %}
+      <section class="related-posts"><p class="eyebrow">Continue reading</p><h2>Related posts</h2><div class="post-grid">{% for post in related limit: 3 %}{% include post-card.html post=post %}{% endfor %}</div></section>
+    {% endif %}
+  </footer>
+</article>

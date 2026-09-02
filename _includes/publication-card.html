@@ -1,0 +1,28 @@
+{% assign pub = include.publication %}
+<article class="publication-item" data-publication data-type="{{ pub.type | slugify }}" data-year="{{ pub.year }}">
+  <div class="publication-item__year">{{ pub.year }}</div>
+  <div class="publication-item__body">
+    <p class="publication-item__type">{{ pub.type }}</p>
+    <h3>{{ pub.title }}</h3>
+    <p class="publication-item__authors">{{ pub.authors }}</p>
+    <p class="publication-item__venue"><em>{{ pub.venue }}</em>{% if pub.volume %}, {{ pub.volume }}{% endif %}{% if pub.issue %}({{ pub.issue }}){% endif %}{% if pub.pages %}: {{ pub.pages }}{% endif %}.</p>
+    <div class="link-cluster">
+      {% if pub.doi %}<a href="{{ pub.doi }}">DOI</a>{% endif %}
+      {% if pub.pdf %}<a href="{{ pub.pdf | relative_url }}">PDF</a>{% endif %}
+      {% if pub.code %}<a href="{{ pub.code }}">Code</a>{% endif %}
+      {% if pub.dataset %}<a href="{{ pub.dataset }}">Dataset</a>{% endif %}
+      {% if pub.project %}<a href="{{ pub.project | relative_url }}">Project</a>{% endif %}
+      {% if pub.slides %}<a href="{{ pub.slides }}">Slides</a>{% endif %}
+      {% if pub.video %}<a href="{{ pub.video }}">Video</a>{% endif %}
+      {% unless include.compact %}<button type="button" class="inline-button" data-citation-toggle="citation-{{ pub.id }}" aria-expanded="false">Cite</button>{% endunless %}
+    </div>
+    {% unless include.compact %}
+      <div class="citation-panel" id="citation-{{ pub.id }}" hidden>
+        <p>{{ pub.citation }}</p>
+        <pre><code>{{ pub.bibtex | escape }}</code></pre>
+        <button type="button" class="copy-button copy-button--panel" data-copy-target="citation-{{ pub.id }}">Copy BibTeX</button>
+      </div>
+    {% endunless %}
+  </div>
+</article>
+

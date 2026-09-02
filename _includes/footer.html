@@ -1,0 +1,31 @@
+<footer class="site-footer">
+  <div class="shell footer-grid">
+    <div>
+      <a class="footer-name" href="{{ '/' | relative_url }}">{{ site.author.name }}</a>
+      <p>{{ site.author.title }} at {{ site.author.institution }}.</p>
+    </div>
+    <div>
+      <p class="eyebrow">Explore</p>
+      <nav aria-label="Footer navigation">
+        <a href="{{ '/research/' | relative_url }}">Research</a>
+        <a href="{{ '/projects/' | relative_url }}">Projects</a>
+        <a href="{{ '/blog/' | relative_url }}">Writing</a>
+        <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
+      </nav>
+    </div>
+    <div>
+      <p class="eyebrow">Connect</p>
+      <nav aria-label="Social links">
+        <a href="mailto:{{ site.author.email }}">Email</a>
+        <a href="{{ site.social.github }}" rel="me">GitHub</a>
+        <a href="{{ site.social.linkedin }}" rel="me">LinkedIn</a>
+        <a href="{{ site.social.orcid }}" rel="me">ORCID</a>
+      </nav>
+    </div>
+  </div>
+  <div class="shell footer-bottom">
+    <span>© {{ site.time | date: '%Y' }} {{ site.author.name }}</span>
+    <span>Built with Jekyll · Hosted on GitHub Pages</span>
+  </div>
+</footer>
+
