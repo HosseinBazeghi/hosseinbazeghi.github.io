@@ -20,8 +20,11 @@ description: "Academic homepage of Hossein Bazeghi Kisomi, a PhD candidate in ea
       <a class="button button--secondary" href="{{ '/publications/' | relative_url }}">View publications</a>
     </div>
     <div class="social-row" aria-label="Professional profiles">
+      <a href="{{ site.social.github }}">GitHub</a>
+      <a href="{{ site.social.linkedin }}">LinkedIn</a>
       <a href="{{ site.social.google_scholar }}">Google Scholar</a>
       <a href="{{ site.social.researchgate }}">ResearchGate</a>
+      <a href="{{ site.social.orcid }}">ORCID</a>
       <a href="mailto:{{ site.author.email }}">Email</a>
     </div>
   </div>

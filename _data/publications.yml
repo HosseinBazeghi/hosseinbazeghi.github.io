@@ -1,3 +1,21 @@
+- id: todorovska-2026-six-component-motions
+  type: Journal Articles
+  title: "Six-Component (6C) Motions in a 50-Story Skyscraper in Kunming, Yunnan Province, China, Recorded During the Mw 7.7 Mandalay, Myanmar, Earthquake of 28 March 2025: What Caused the Beating in the Response?"
+  authors: "Maria I. Todorovska, Mario Antonio Gonzalez-Sandoval, Mihailo D. Trifunac, Hossein Bazeghi Kisomi, Alimu Aihemaiti, Guoliang Lin, Jianwen Cui"
+  venue: "Seismological Research Letters"
+  year: 2026
+  doi: "https://doi.org/10.1785/0220260008"
+  featured: true
+  citation: "Todorovska, M. I., Gonzalez-Sandoval, M. A., Trifunac, M. D., Bazeghi Kisomi, H., Aihemaiti, A., Lin, G., and Cui, J. (2026). Six-Component (6C) Motions in a 50-Story Skyscraper in Kunming, Yunnan Province, China, Recorded During the Mw 7.7 Mandalay, Myanmar, Earthquake of 28 March 2025: What Caused the Beating in the Response? Seismological Research Letters."
+  bibtex: |
+    @article{todorovska2026sixcomponent,
+      title   = {Six-Component (6C) Motions in a 50-Story Skyscraper in Kunming, Yunnan Province, China, Recorded During the Mw 7.7 Mandalay, Myanmar, Earthquake of 28 March 2025: What Caused the Beating in the Response?},
+      author  = {Todorovska, Maria I. and Gonzalez-Sandoval, Mario Antonio and Trifunac, Mihailo D. and Bazeghi Kisomi, Hossein and Aihemaiti, Alimu and Lin, Guoliang and Cui, Jianwen},
+      journal = {Seismological Research Letters},
+      year    = {2026},
+      doi     = {10.1785/0220260008}
+    }
+
 - id: gicev-2026-vertical-shear-stresses
   type: Journal Articles
   title: "Vertical and shear stresses at the base of a building on a deformable foundation excited by an incident P-wave pulse: Linear and nonlinear soil"

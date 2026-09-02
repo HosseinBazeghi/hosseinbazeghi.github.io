@@ -21,8 +21,11 @@ author:
   profile_image_alt: "Portrait of Hossein Bazeghi Kisomi"
 
 social:
+  github: "https://github.com/HosseinBazeghi"
+  linkedin: "https://www.linkedin.com/in/hossein-bazeghi-kisomi-71a78379/"
   researchgate: "https://www.researchgate.net/profile/Hossein-Bazeghi-Kisomi?ev=hdr_xprf"
   google_scholar: "https://scholar.google.com/citations?user=nd6QsZEAAAAJ&hl=en"
+  orcid: "https://orcid.org/0000-0002-2832-7174"
 
 cv_path: "/assets/documents/cv.pdf"
 default_social_image: "/assets/images/academic-og.png"

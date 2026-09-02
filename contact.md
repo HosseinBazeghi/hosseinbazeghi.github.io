@@ -21,7 +21,7 @@ wide: true
   </section>
   <section class="contact-card">
     <p class="eyebrow">Profiles</p>
-    <p><a href="{{ site.social.google_scholar }}">Google Scholar</a><br><a href="{{ site.social.researchgate }}">ResearchGate</a></p>
+    <p><a href="{{ site.social.github }}">GitHub</a><br><a href="{{ site.social.linkedin }}">LinkedIn</a><br><a href="{{ site.social.google_scholar }}">Google Scholar</a><br><a href="{{ site.social.researchgate }}">ResearchGate</a><br><a href="{{ site.social.orcid }}">ORCID</a></p>
   </section>
 </div>
 
