@@ -1,3 +1,48 @@
+- id: bazeghi-kisomi-2026-sfsi-sv-wave-part-i
+  type: Submitted Manuscripts
+  title: "Soil-foundation-structure interaction in nonlinear soil for a deformable foundation under an obliquely incident SV-wave pulse I: Displacements and rotations"
+  authors: "Hossein Bazeghi Kisomi, Vlado Gičev, Mihailo D. Trifunac, Maria I. Todorovska"
+  venue: "Submitted to Soil Dynamics and Earthquake Engineering"
+  year: 2026
+  citation: "Bazeghi Kisomi, H., Gičev, V., Trifunac, M. D., and Todorovska, M. I. (2026). Soil-foundation-structure interaction in nonlinear soil for a deformable foundation under an obliquely incident SV-wave pulse I: Displacements and rotations. Submitted to Soil Dynamics and Earthquake Engineering."
+  bibtex: |
+    @unpublished{bazeghikisomi2026sfsi1,
+      title  = {Soil-foundation-structure interaction in nonlinear soil for a deformable foundation under an obliquely incident {SV}-wave pulse {I}: Displacements and rotations},
+      author = {Bazeghi Kisomi, Hossein and Gi\v{c}ev, Vlado and Trifunac, Mihailo D. and Todorovska, Maria I.},
+      note   = {Submitted to Soil Dynamics and Earthquake Engineering},
+      year   = {2026}
+    }
+
+- id: bazeghi-kisomi-2026-sfsi-sv-wave-part-ii
+  type: Submitted Manuscripts
+  title: "Soil-foundation-structure interaction in nonlinear soil for a deformable foundation under an obliquely incident SV-wave pulse II: Shear and normal stresses"
+  authors: "Hossein Bazeghi Kisomi, Vlado Gičev, Mihailo D. Trifunac, Maria I. Todorovska"
+  venue: "Submitted to Soil Dynamics and Earthquake Engineering"
+  year: 2026
+  citation: "Bazeghi Kisomi, H., Gičev, V., Trifunac, M. D., and Todorovska, M. I. (2026). Soil-foundation-structure interaction in nonlinear soil for a deformable foundation under an obliquely incident SV-wave pulse II: Shear and normal stresses. Submitted to Soil Dynamics and Earthquake Engineering."
+  bibtex: |
+    @unpublished{bazeghikisomi2026sfsi2,
+      title  = {Soil-foundation-structure interaction in nonlinear soil for a deformable foundation under an obliquely incident {SV}-wave pulse {II}: Shear and normal stresses},
+      author = {Bazeghi Kisomi, Hossein and Gi\v{c}ev, Vlado and Trifunac, Mihailo D. and Todorovska, Maria I.},
+      note   = {Submitted to Soil Dynamics and Earthquake Engineering},
+      year   = {2026}
+    }
+
+- id: bazeghi-kisomi-2026-sfsi-sv-wave-part-iii
+  type: Submitted Manuscripts
+  title: "Soil-foundation-structure interaction in nonlinear soil for a deformable foundation under an obliquely incident SV-wave pulse III: Critical incidence"
+  authors: "Hossein Bazeghi Kisomi, Vlado Gičev, Mihailo D. Trifunac, Maria I. Todorovska"
+  venue: "Submitted to Soil Dynamics and Earthquake Engineering"
+  year: 2026
+  citation: "Bazeghi Kisomi, H., Gičev, V., Trifunac, M. D., and Todorovska, M. I. (2026). Soil-foundation-structure interaction in nonlinear soil for a deformable foundation under an obliquely incident SV-wave pulse III: Critical incidence. Submitted to Soil Dynamics and Earthquake Engineering."
+  bibtex: |
+    @unpublished{bazeghikisomi2026sfsi3,
+      title  = {Soil-foundation-structure interaction in nonlinear soil for a deformable foundation under an obliquely incident {SV}-wave pulse {III}: Critical incidence},
+      author = {Bazeghi Kisomi, Hossein and Gi\v{c}ev, Vlado and Trifunac, Mihailo D. and Todorovska, Maria I.},
+      note   = {Submitted to Soil Dynamics and Earthquake Engineering},
+      year   = {2026}
+    }
+
 - id: todorovska-2026-six-component-motions
   type: Journal Articles
   title: "Six-Component (6C) Motions in a 50-Story Skyscraper in Kunming, Yunnan Province, China, Recorded During the Mw 7.7 Mandalay, Myanmar, Earthquake of 28 March 2025: What Caused the Beating in the Response?"

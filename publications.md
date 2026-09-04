@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Publications
-description: "Peer-reviewed articles and conference papers by Hossein Bazeghi Kisomi."
+description: "Peer-reviewed articles, conference papers, and submitted manuscripts by Hossein Bazeghi Kisomi."
 ---
 <section class="page-shell shell">
   <header class="page-heading">
@@ -24,6 +24,7 @@ description: "Peer-reviewed articles and conference papers by Hossein Bazeghi Ki
     <button class="filter-button is-active" type="button" data-filter-button="all">All</button>
     <button class="filter-button" type="button" data-filter-button="journal-articles">Journals</button>
     <button class="filter-button" type="button" data-filter-button="conference-papers">Conferences</button>
+    <button class="filter-button" type="button" data-filter-button="submitted-manuscripts">Submitted</button>
     <button class="filter-button" type="button" data-filter-button="preprints">Preprints</button>
   </div>
 
