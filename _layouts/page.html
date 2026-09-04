@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-<article class="page-shell shell prose-page">
+<article class="page-shell shell prose-page{% if page.page_class %} {{ page.page_class }}{% endif %}">
   <header class="page-heading">
     {% if page.eyebrow %}<p class="eyebrow">{{ page.eyebrow }}</p>{% endif %}
     <h1>{{ page.title }}</h1>

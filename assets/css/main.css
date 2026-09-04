@@ -388,6 +388,10 @@ p { margin: 0 0 1rem; }
 .prose h2, .prose h3, .prose h4 { margin-top: 2.7em; color: var(--ink); scroll-margin-top: calc(var(--header-height) + 1.5rem); }
 .prose h2 { padding-bottom: .45rem; border-bottom: 1px solid var(--line); font-size: clamp(1.4rem, 2vw, 1.75rem); }
 .prose h3 { font-size: clamp(1.15rem, 1.5vw, 1.3rem); }
+.about-page .page-heading h1 { font-size: clamp(2rem, 3vw, 2.6rem); }
+.about-page .page-deck { font-size: clamp(1rem, 1.35vw, 1.15rem); }
+.about-page .prose h2 { font-size: clamp(1.35rem, 1.7vw, 1.6rem); }
+.about-page .prose h3 { font-size: clamp(1.05rem, 1.2vw, 1.18rem); }
 .prose p, .prose ul, .prose ol { margin-block: 0 1.35rem; }
 .prose li + li { margin-top: .4rem; }
 .prose strong { color: var(--ink); }

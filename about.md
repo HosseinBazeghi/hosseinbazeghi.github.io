@@ -2,6 +2,7 @@
 title: About
 eyebrow: Profile
 description: "Background, education, and research interests of Hossein Bazeghi Kisomi."
+page_class: about-page
 ---
 
 ## Background
