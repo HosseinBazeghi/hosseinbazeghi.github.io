@@ -328,7 +328,7 @@ p { margin: 0 0 1rem; }
 .interest-card { min-height: 15rem; padding: 1.8rem 1.8rem 1.8rem 0; border-right: 1px solid var(--line-strong); }
 .interest-card + .interest-card { padding-left: 2rem; }
 .interest-card:last-child { border-right: 0; }
-.interest-card > span { display: block; margin-bottom: 2.5rem; color: var(--copper); font-family: var(--mono); font-size: 1.05rem; }
+.interest-card > span { display: block; margin-bottom: 2.5rem; color: var(--copper); font-family: var(--mono); font-size: 1.5rem; }
 .interest-card p { color: var(--ink-soft); }
 .project-grid, .post-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; }
 .project-grid--featured { grid-template-columns: minmax(0, 36rem); }
