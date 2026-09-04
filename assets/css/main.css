@@ -183,16 +183,15 @@ p { margin: 0 0 1rem; }
   stroke: var(--teal);
   stroke-linecap: round;
   stroke-linejoin: round;
-  stroke-dasharray: 26 74;
-  stroke-dashoffset: 26;
+  stroke-dasharray: 28 100;
+  stroke-dashoffset: 28;
   animation: header-earthquake 6s linear infinite;
 }
-.header-seismogram__line { --wave-opacity: .18; stroke-width: 1.8; }
-.header-seismogram__glow { --wave-opacity: .035; stroke-width: 7; filter: blur(4px); }
+.header-seismogram__line { opacity: .18; stroke-width: 1.8; }
+.header-seismogram__glow { opacity: .035; stroke-width: 7; filter: blur(4px); }
 @keyframes header-earthquake {
-  0% { opacity: 0; stroke-dashoffset: 26; }
-  8%, 78% { opacity: var(--wave-opacity); }
-  94%, 100% { opacity: 0; stroke-dashoffset: -100; }
+  from { stroke-dashoffset: 28; }
+  to { stroke-dashoffset: -100; }
 }
 .nav-shell { position: relative; z-index: 1; height: 100%; display: flex; align-items: center; gap: 1.2rem; }
 .site-mark { display: inline-flex; align-items: center; gap: .75rem; color: var(--ink); text-decoration: none; margin-right: auto; }
