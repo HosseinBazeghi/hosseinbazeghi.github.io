@@ -507,13 +507,13 @@ figcaption { margin-top: .7rem; color: var(--ink-faint); font-size: .82rem; line
 .cv-entry h3 { margin: 0; font-family: var(--sans); font-size: 1rem; letter-spacing: 0; }
 .cv-entry p { grid-column: 1 / -1; margin: 0; }
 .cv-entry time { color: var(--copper); font-family: var(--mono); font-size: .8rem; }
-.contact-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 1.25rem; }
+.contact-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; align-items: stretch; }
 .contact-card { padding: 1.5rem; background: var(--paper-raised); border: 1px solid var(--line); border-radius: var(--radius); }
 .contact-card a { overflow-wrap: anywhere; }
 .contact-card h2 { font-size: 1.3rem; line-height: 1.25; }
 .profile-links { display: grid; gap: .45rem; }
 .profile-links a { width: fit-content; }
-.contact-card--primary { grid-row: span 2; min-height: 20rem; display: flex; flex-direction: column; justify-content: space-between; background: var(--feature-bg); color: var(--feature-muted); }
+.contact-card--primary { display: flex; flex-direction: column; justify-content: space-between; background: var(--feature-bg); color: var(--feature-muted); }
 .contact-card--primary h2, .contact-card--primary a { color: var(--feature-text); }
 .contact-card--primary .eyebrow { color: var(--feature-accent); }
 
@@ -569,6 +569,8 @@ figcaption { margin-top: .7rem; color: var(--ink-faint); font-size: .82rem; line
   .article-aside { position: static; padding: 1rem; background: var(--paper-raised); border: 1px solid var(--line); border-radius: var(--radius); }
   .project-hero { grid-template-columns: 1fr; }
   .project-hero > img { max-width: 40rem; }
+  .contact-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .contact-card--primary { grid-column: 1 / -1; }
 }
 
 @media (max-width: 46rem) {
