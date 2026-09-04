@@ -57,13 +57,13 @@ description: "Academic homepage of Hossein Bazeghi Kisomi, a PhD candidate in Ci
 <section class="signal-strip" aria-label="Professional snapshot">
   <div class="shell signal-grid signal-grid--compact">
     <div>
-      <strong>05</strong>
-      <span>Research focus areas</span>
+      <strong>{{ site.data.publications | size }}</strong>
+      <span>Publications listed</span>
     </div>
 
     <div>
-      <strong>{{ site.data.publications | size }}</strong>
-      <span>Publications listed</span>
+      <strong>{{ site.projects | size }}</strong>
+      <span>Projects listed</span>
     </div>
 
   </div>
