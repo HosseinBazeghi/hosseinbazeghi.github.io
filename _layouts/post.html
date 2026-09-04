@@ -32,7 +32,7 @@ layout: default
   <footer class="post-footer shell">
     <div class="share-row" aria-label="Share this article">
       <span>Share</span>
-      <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ page.url | absolute_url | url_encode }}">LinkedIn</a>
+      <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ page.url | absolute_url | url_encode }}" target="_blank" rel="noopener noreferrer">LinkedIn</a>
       <a href="mailto:?subject={{ page.title | url_encode }}&body={{ page.url | absolute_url | url_encode }}">Email</a>
       <button type="button" data-copy-url>Copy link</button>
     </div>
@@ -42,7 +42,7 @@ layout: default
     </nav>
     {% assign related = site.related_posts | where_exp: 'post', 'post.url != page.url' %}
     {% if related.size > 0 %}
-      <section class="related-posts"><p class="eyebrow">Continue reading</p><h2>Related posts</h2><div class="post-grid">{% for post in related limit: 3 %}{% include post-card.html post=post %}{% endfor %}</div></section>
+      <section class="related-posts"><p class="eyebrow">Continue reading</p><h2>Related posts</h2><div class="post-grid">{% for post in related limit: 3 %}{% include post-card.html post=post heading_level=3 %}{% endfor %}</div></section>
     {% endif %}
   </footer>
 </article>

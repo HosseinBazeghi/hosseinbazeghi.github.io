@@ -1,7 +1,23 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#f4f1e9" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0d151c" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f5f3ed" data-theme-color>
+<script>
+  (function () {
+    var theme = 'light';
+    try {
+      var saved = localStorage.getItem('theme');
+      if (saved === 'light' || saved === 'dark') {
+        theme = saved;
+      } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        theme = 'dark';
+      }
+    } catch (error) {
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) theme = 'dark';
+    }
+    document.documentElement.dataset.theme = theme;
+    document.querySelector('[data-theme-color]').setAttribute('content', theme === 'dark' ? '#0e1820' : '#f5f3ed');
+  }());
+</script>
 {% seo %}
 {% assign social_image = page.image | default: site.default_social_image %}
 {% if social_image %}
@@ -14,13 +30,6 @@
 <link rel="icon" href="{{ '/assets/images/favicon.svg' | relative_url }}" type="image/svg+xml">
 <link rel="preload" href="{{ '/assets/css/main.css' | relative_url }}" as="style">
 <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
-<script>
-  (function () {
-    var saved = localStorage.getItem('theme');
-    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    document.documentElement.dataset.theme = saved || (prefersDark ? 'dark' : 'light');
-  }());
-</script>
 {% if page.math or page.layout == 'post' %}
 <script>
   window.MathJax = {

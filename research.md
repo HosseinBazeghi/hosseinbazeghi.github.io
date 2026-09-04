@@ -1,5 +1,5 @@
 ---
-title: Research / Work
+title: Research
 eyebrow: Research focus
 description: "Research on soil–structure interaction, seismic wave propagation, strong ground motion, earthquake engineering, and numerical modeling."
 ---

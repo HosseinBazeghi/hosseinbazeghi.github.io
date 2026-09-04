@@ -3,18 +3,18 @@
   <div class="publication-item__year">{{ pub.year }}</div>
   <div class="publication-item__body">
     <p class="publication-item__type">{{ pub.type }}</p>
-    <h3>{{ pub.title }}</h3>
+    {% if include.compact %}<h3>{{ pub.title }}</h3>{% else %}<h2>{{ pub.title }}</h2>{% endif %}
     <p class="publication-item__authors">{{ pub.authors }}</p>
     <p class="publication-item__venue"><em>{{ pub.venue }}</em>{% if pub.volume %}, {{ pub.volume }}{% endif %}{% if pub.issue %}({{ pub.issue }}){% endif %}{% if pub.pages %}: {{ pub.pages }}{% endif %}.</p>
     <div class="link-cluster">
-      {% if pub.doi %}<a href="{{ pub.doi }}">DOI</a>{% endif %}
-      {% if pub.link %}<a href="{{ pub.link }}">Publication</a>{% endif %}
+      {% if pub.doi %}<a href="{{ pub.doi }}" target="_blank" rel="noopener noreferrer">DOI</a>{% endif %}
+      {% if pub.link %}<a href="{{ pub.link }}" target="_blank" rel="noopener noreferrer">Publication</a>{% endif %}
       {% if pub.pdf %}<a href="{{ pub.pdf | relative_url }}">PDF</a>{% endif %}
-      {% if pub.code %}<a href="{{ pub.code }}">Code</a>{% endif %}
-      {% if pub.dataset %}<a href="{{ pub.dataset }}">Dataset</a>{% endif %}
+      {% if pub.code %}<a href="{{ pub.code }}" target="_blank" rel="noopener noreferrer">Code</a>{% endif %}
+      {% if pub.dataset %}<a href="{{ pub.dataset }}" target="_blank" rel="noopener noreferrer">Dataset</a>{% endif %}
       {% if pub.project %}<a href="{{ pub.project | relative_url }}">Project</a>{% endif %}
-      {% if pub.slides %}<a href="{{ pub.slides }}">Slides</a>{% endif %}
-      {% if pub.video %}<a href="{{ pub.video }}">Video</a>{% endif %}
+      {% if pub.slides %}<a href="{{ pub.slides }}" target="_blank" rel="noopener noreferrer">Slides</a>{% endif %}
+      {% if pub.video %}<a href="{{ pub.video }}" target="_blank" rel="noopener noreferrer">Video</a>{% endif %}
       {% unless include.compact %}<button type="button" class="inline-button" data-citation-toggle="citation-{{ pub.id }}" aria-expanded="false">Cite</button>{% endunless %}
     </div>
     {% unless include.compact %}

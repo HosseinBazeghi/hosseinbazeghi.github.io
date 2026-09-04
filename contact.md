@@ -16,12 +16,13 @@ wide: true
   </section>
   <section class="contact-card">
     <p class="eyebrow">Affiliation</p>
-    <h3>{{ site.author.institution }}</h3>
+    <h2>{{ site.author.institution }}</h2>
     <p>{{ site.author.location }}</p>
   </section>
   <section class="contact-card">
     <p class="eyebrow">Profiles</p>
-    <p><a href="{{ site.social.github }}">GitHub</a><br><a href="{{ site.social.linkedin }}">LinkedIn</a><br><a href="{{ site.social.google_scholar }}">Google Scholar</a><br><a href="{{ site.social.researchgate }}">ResearchGate</a><br><a href="{{ site.social.orcid }}">ORCID</a></p>
+    <h2>Professional profiles</h2>
+    <p class="profile-links"><a href="{{ site.social.github }}" target="_blank" rel="noopener noreferrer">GitHub</a><a href="{{ site.social.linkedin }}" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="{{ site.social.google_scholar }}" target="_blank" rel="noopener noreferrer">Google Scholar</a><a href="{{ site.social.researchgate }}" target="_blank" rel="noopener noreferrer">ResearchGate</a><a href="{{ site.social.orcid }}" target="_blank" rel="noopener noreferrer">ORCID</a></p>
   </section>
 </div>
 

@@ -7,7 +7,7 @@ description: "Peer-reviewed articles and conference papers by Hossein Bazeghi Ki
   <header class="page-heading">
     <p class="eyebrow">Research output</p>
     <h1>{{ page.title }}</h1>
-    <p class="page-deck">{{ page.description }} For the most current citation information, visit my <a href="{{ site.social.google_scholar }}">Google Scholar profile</a>.</p>
+    <p class="page-deck">{{ page.description }} For the most current citation information, visit my <a href="{{ site.social.google_scholar }}" target="_blank" rel="noopener noreferrer">Google Scholar profile</a>.</p>
   </header>
 
   <div class="filter-bar" data-publication-filters aria-label="Publication filters">

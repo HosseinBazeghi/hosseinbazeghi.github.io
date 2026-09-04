@@ -3,9 +3,11 @@
   exact: true
 - label: About
   url: /about/
-- label: Research / Work
+- label: Research
   url: /research/
 - label: Publications
   url: /publications/
+- label: Blog
+  url: /blog/
 - label: Contact
   url: /contact/

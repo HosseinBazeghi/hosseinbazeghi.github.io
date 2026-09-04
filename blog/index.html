@@ -2,7 +2,6 @@
 layout: default
 title: Blog
 description: "Research notes, technical tutorials, field observations, and ideas in progress."
-published: false
 pagination:
   enabled: true
 ---
@@ -10,7 +9,7 @@ pagination:
   <header class="page-heading">
     <p class="eyebrow">Writing</p>
     <h1>{{ page.title }}</h1>
-    <p class="page-deck">{{ page.description }} Posts are plain Markdown files with optional figures, equations, code, and video.</p>
+    <p class="page-deck">{{ page.description }}</p>
   </header>
 
   <div class="filter-bar" data-blog-filters aria-label="Blog filters">
@@ -25,9 +24,7 @@ pagination:
       {% for category in categories %}<option value="{{ category | slugify }}">{{ category }}</option>{% endfor %}
     </select>
     <button class="filter-button is-active" type="button" data-filter-button="all">All</button>
-    <button class="filter-button" type="button" data-filter-button="research">Research</button>
-    <button class="filter-button" type="button" data-filter-button="methods">Methods</button>
-    <button class="filter-button" type="button" data-filter-button="notes">Notes</button>
+    {% for category in categories %}<button class="filter-button" type="button" data-filter-button="{{ category | slugify }}">{{ category }}</button>{% endfor %}
   </div>
 
   <div class="post-grid">

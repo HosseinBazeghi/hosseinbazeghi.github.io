@@ -44,18 +44,18 @@ description: "Academic homepage of Hossein Bazeghi Kisomi, a PhD candidate in Ci
     </div>
 
     <div class="social-row" aria-label="Professional profiles">
-      <a href="{{ site.social.github }}">GitHub</a>
-      <a href="{{ site.social.linkedin }}">LinkedIn</a>
-      <a href="{{ site.social.google_scholar }}">Google Scholar</a>
-      <a href="{{ site.social.researchgate }}">ResearchGate</a>
-      <a href="{{ site.social.orcid }}">ORCID</a>
+      <a href="{{ site.social.github }}" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="{{ site.social.linkedin }}" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="{{ site.social.google_scholar }}" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+      <a href="{{ site.social.researchgate }}" target="_blank" rel="noopener noreferrer">ResearchGate</a>
+      <a href="{{ site.social.orcid }}" target="_blank" rel="noopener noreferrer">ORCID</a>
       <a href="mailto:{{ site.author.email }}">Email</a>
     </div>
   </div>
 </section>
 
 <section class="signal-strip" aria-label="Professional snapshot">
-  <div class="shell signal-grid">
+  <div class="shell signal-grid signal-grid--compact">
     <div>
       <strong>05</strong>
       <span>Research focus areas</span>
@@ -66,15 +66,6 @@ description: "Academic homepage of Hossein Bazeghi Kisomi, a PhD candidate in Ci
       <span>Publications listed</span>
     </div>
 
-    <div>
-      <strong>02</strong>
-      <span>Universities</span>
-    </div>
-
-    <div>
-      <strong>01</strong>
-      <span>Research laboratory</span>
-    </div>
   </div>
 </section>
 
@@ -167,5 +158,25 @@ description: "Academic homepage of Hossein Bazeghi Kisomi, a PhD candidate in Ci
         {% include publication-card.html publication=publication compact=true %}
       {% endfor %}
     </div>
+  </div>
+</section>
+
+<section class="section shell">
+  <div class="section-heading reveal">
+    <div>
+      <p class="eyebrow">Selected work</p>
+      <h2>Projects</h2>
+    </div>
+
+    <a class="text-link" href="{{ '/projects/' | relative_url }}">
+      View all projects <span aria-hidden="true">→</span>
+    </a>
+  </div>
+
+  <div class="project-grid project-grid--featured">
+    {% assign sorted_projects = site.projects | sort: 'order' %}
+    {% for project in sorted_projects limit: 1 %}
+      {% include project-card.html project=project heading_level=3 %}
+    {% endfor %}
   </div>
 </section>

@@ -1,4 +1,5 @@
 {% assign post = include.post %}
+{% assign heading_level = include.heading_level | default: 2 %}
 {% assign words = post.content | strip_html | number_of_words %}
 {% assign minutes = words | divided_by: 220 %}
 {% if minutes < 1 %}{% assign minutes = 1 %}{% endif %}
@@ -10,10 +11,9 @@
   {% endif %}
   <div class="post-card__body">
     <div class="meta-row"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%b %-d, %Y' }}</time><span>{{ minutes }} min read</span></div>
-    <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+    {% if heading_level == 3 %}<h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>{% else %}<h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>{% endif %}
     <p>{{ post.description }}</p>
     {% if post.tags %}<ul class="tag-list" aria-label="Post tags">{% for tag in post.tags %}<li>{{ tag }}</li>{% endfor %}</ul>{% endif %}
     <a class="text-link" href="{{ post.url | relative_url }}">Read article <span aria-hidden="true">→</span></a>
   </div>
 </article>
-

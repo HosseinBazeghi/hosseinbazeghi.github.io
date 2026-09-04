@@ -7,38 +7,71 @@
   var nav = document.querySelector('[data-nav]');
   var header = document.querySelector('[data-site-header]');
   var themeToggle = document.querySelector('[data-theme-toggle]');
+  var themeColor = document.querySelector('[data-theme-color]');
+  var hasManualTheme = false;
 
-  function closeNav() {
+  function closeNav(returnFocus) {
     if (!navToggle || !nav) return;
+    var wasOpen = navToggle.getAttribute('aria-expanded') === 'true';
     navToggle.setAttribute('aria-expanded', 'false');
+    navToggle.setAttribute('aria-label', 'Open navigation');
     nav.classList.remove('is-open');
+    if (returnFocus && wasOpen) navToggle.focus();
   }
 
   if (navToggle && nav) {
     navToggle.addEventListener('click', function () {
       var open = navToggle.getAttribute('aria-expanded') === 'true';
       navToggle.setAttribute('aria-expanded', String(!open));
+      navToggle.setAttribute('aria-label', open ? 'Open navigation' : 'Close navigation');
       nav.classList.toggle('is-open', !open);
     });
     nav.querySelectorAll('a').forEach(function (link) { link.addEventListener('click', closeNav); });
+    window.addEventListener('resize', function () {
+      if (window.innerWidth > 1072) closeNav(false);
+    });
   }
 
   window.addEventListener('scroll', function () {
     if (header) header.classList.toggle('is-scrolled', window.scrollY > 10);
   }, { passive: true });
 
+  function syncTheme(theme) {
+    var isDark = theme === 'dark';
+    root.dataset.theme = isDark ? 'dark' : 'light';
+    if (themeColor) themeColor.setAttribute('content', isDark ? '#0e1820' : '#f5f3ed');
+    if (themeToggle) {
+      var action = isDark ? 'Switch to light mode' : 'Switch to dark mode';
+      themeToggle.setAttribute('aria-label', action);
+      themeToggle.setAttribute('title', action);
+    }
+  }
+
+  syncTheme(root.dataset.theme);
+
   if (themeToggle) {
     themeToggle.addEventListener('click', function () {
       var next = root.dataset.theme === 'dark' ? 'light' : 'dark';
-      root.dataset.theme = next;
-      localStorage.setItem('theme', next);
-      themeToggle.setAttribute('aria-label', next === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+      hasManualTheme = true;
+      syncTheme(next);
+      try { localStorage.setItem('theme', next); } catch (error) { /* The current-page choice still works. */ }
     });
+  }
+
+  if (window.matchMedia) {
+    var colorPreference = window.matchMedia('(prefers-color-scheme: dark)');
+    var hasSavedTheme = false;
+    try { hasSavedTheme = localStorage.getItem('theme') === 'light' || localStorage.getItem('theme') === 'dark'; } catch (error) { /* Use OS preference. */ }
+    var followSystemTheme = function (event) {
+      if (!hasSavedTheme && !hasManualTheme) syncTheme(event.matches ? 'dark' : 'light');
+    };
+    if (colorPreference.addEventListener) colorPreference.addEventListener('change', followSystemTheme);
+    else if (colorPreference.addListener) colorPreference.addListener(followSystemTheme);
   }
 
   document.addEventListener('keydown', function (event) {
     if (event.key === 'Escape') {
-      closeNav();
+      closeNav(true);
       closeLightbox();
     }
   });
@@ -258,4 +291,3 @@
     });
   });
 }());
-
