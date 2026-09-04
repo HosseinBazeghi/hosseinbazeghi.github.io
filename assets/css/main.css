@@ -171,19 +171,14 @@ p { margin: 0 0 1rem; }
 .nav-shell { height: 100%; display: flex; align-items: center; gap: 1.2rem; }
 .site-mark { display: inline-flex; align-items: center; gap: .75rem; color: var(--ink); text-decoration: none; margin-right: auto; }
 .site-mark:hover { color: var(--ink); }
-.site-mark__monogram {
-  display: grid;
+.site-mark__logo {
   width: 2.35rem;
+  height: 2.35rem;
+  flex: 0 0 auto;
   aspect-ratio: 1;
-  place-items: center;
-  background: var(--navy);
-  color: var(--paper);
   border-radius: 50%;
-  font-family: var(--serif);
-  font-size: .82rem;
-  letter-spacing: .04em;
+  object-fit: cover;
 }
-:root[data-theme="dark"] .site-mark__monogram { background: var(--teal); color: #091412; }
 .site-mark__text { display: grid; line-height: 1.15; }
 .site-mark__text strong { font-size: .95rem; }
 .site-mark__text small { color: var(--ink-faint); font-size: .78rem; }

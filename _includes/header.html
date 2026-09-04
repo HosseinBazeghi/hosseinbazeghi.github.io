@@ -1,11 +1,8 @@
 <a class="skip-link" href="#main-content">Skip to content</a>
-{% assign name_parts = site.author.name | split: ' ' %}
-{% assign first_initial = name_parts.first | slice: 0, 1 %}
-{% assign last_initial = name_parts.last | slice: 0, 1 %}
 <header class="site-header" data-site-header>
   <div class="shell nav-shell">
     <a class="site-mark" href="{{ '/' | relative_url }}" aria-label="{{ site.title }} home">
-      <span class="site-mark__monogram" aria-hidden="true">{{ first_initial }}{{ last_initial }}</span>
+      <img class="site-mark__logo" src="{{ '/assets/images/hk-circle.png' | relative_url }}" alt="HK Circle" width="256" height="256">
       <span class="site-mark__text">
         <strong>{{ site.author.name }}</strong>
         <small>{{ site.author.title }}</small>
