@@ -1,9 +1,9 @@
 {% assign project = include.project %}
 {% assign heading_level = include.heading_level | default: 2 %}
-<article class="project-card reveal">
-  <a class="project-card__image" href="{{ project.url | relative_url }}" tabindex="-1" aria-hidden="true">
+<article class="project-card">
+  {% if project.image %}<a class="project-card__image" href="{{ project.url | relative_url }}" tabindex="-1" aria-hidden="true">
     <img src="{{ project.image | relative_url }}" alt="" loading="lazy" width="960" height="640">
-  </a>
+  </a>{% endif %}
   <div class="project-card__body">
     <div class="meta-row">
       <span>{{ project.date_range }}</span>

@@ -1,0 +1,8 @@
+{% for entry in include.entries %}
+<div class="academic-entry">
+  <h3>{{ entry.title | escape }}</h3>
+  {% if entry.institution %}<p class="academic-entry__meta">{{ entry.institution | escape }}{% if entry.location %} · {{ entry.location | escape }}{% endif %}</p>{% endif %}
+  {% if entry.date %}<p class="academic-entry__meta">{{ entry.date | escape }}</p>{% endif %}
+  {{ entry.description | markdownify }}
+</div>
+{% endfor %}

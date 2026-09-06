@@ -21,13 +21,12 @@ description: "Peer-reviewed articles, conference papers, and submitted manuscrip
       {% assign years = site.data.publications | map: 'year' | uniq | sort | reverse %}
       {% for year in years %}<option value="{{ year }}">{{ year }}</option>{% endfor %}
     </select>
-    <button class="filter-button is-active" type="button" data-filter-button="all">All</button>
-    <button class="filter-button" type="button" data-filter-button="journal-articles">Journals</button>
-    <button class="filter-button" type="button" data-filter-button="conference-papers">Conferences</button>
-    <button class="filter-button" type="button" data-filter-button="submitted-manuscripts">Submitted</button>
-    <button class="filter-button" type="button" data-filter-button="preprints">Preprints</button>
+    <button class="filter-button is-active" type="button" data-filter-button="all" aria-pressed="true">All</button>
+    {% assign types = site.data.publications | map: 'type' | uniq | sort %}
+    {% for type in types %}<button class="filter-button" type="button" data-filter-button="{{ type | slugify }}" aria-pressed="false">{{ type }}</button>{% endfor %}
   </div>
 
+  <p class="filter-status" data-filter-status role="status" aria-live="polite"></p>
   <div class="publication-list">
     {% assign publications = site.data.publications | sort: 'year' | reverse %}
     {% for publication in publications %}{% include publication-card.html publication=publication %}{% endfor %}

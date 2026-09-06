@@ -1,10 +1,11 @@
 {% assign pub = include.publication %}
+{% capture highlighted_author %}<strong>{{ site.author.name | escape }}</strong>{% endcapture %}
 <article class="publication-item" data-publication data-type="{{ pub.type | slugify }}" data-year="{{ pub.year }}">
   <div class="publication-item__year">{{ pub.year }}</div>
   <div class="publication-item__body">
     <p class="publication-item__type">{{ pub.type }}</p>
     {% if include.compact %}<h3>{{ pub.title }}</h3>{% else %}<h2>{{ pub.title }}</h2>{% endif %}
-    <p class="publication-item__authors">{{ pub.authors }}</p>
+    <p class="publication-item__authors">{{ pub.authors | escape | replace: site.author.name, highlighted_author }}</p>
     <p class="publication-item__venue"><em>{{ pub.venue }}</em>{% if pub.volume %}, {{ pub.volume }}{% endif %}{% if pub.issue %}({{ pub.issue }}){% endif %}{% if pub.pages %}: {{ pub.pages }}{% endif %}.</p>
     <div class="link-cluster">
       {% if pub.doi %}<a href="{{ pub.doi }}" target="_blank" rel="noopener noreferrer">DOI</a>{% endif %}
@@ -15,14 +16,13 @@
       {% if pub.project %}<a href="{{ pub.project | relative_url }}">Project</a>{% endif %}
       {% if pub.slides %}<a href="{{ pub.slides }}" target="_blank" rel="noopener noreferrer">Slides</a>{% endif %}
       {% if pub.video %}<a href="{{ pub.video }}" target="_blank" rel="noopener noreferrer">Video</a>{% endif %}
-      {% unless include.compact %}<button type="button" class="inline-button" data-citation-toggle="citation-{{ pub.id }}" aria-expanded="false">Cite</button>{% endunless %}
     </div>
     {% unless include.compact %}
-      <div class="citation-panel" id="citation-{{ pub.id }}" hidden>
+      <details class="citation-panel" id="citation-{{ pub.id }}"><summary>Citation & BibTeX</summary>
         <p>{{ pub.citation }}</p>
         <pre><code>{{ pub.bibtex | escape }}</code></pre>
         <button type="button" class="copy-button copy-button--panel" data-copy-target="citation-{{ pub.id }}">Copy BibTeX</button>
-      </div>
+      </details>
     {% endunless %}
   </div>
 </article>

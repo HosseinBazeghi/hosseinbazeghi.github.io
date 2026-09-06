@@ -1,182 +1,70 @@
 ---
 layout: home
 title: Home
-description: "Academic homepage of Hossein Bazeghi Kisomi, a PhD candidate in Civil Engineering at Tianjin University specializing in earthquake engineering."
+description: "Hossein Bazeghi Kisomi — PhD candidate at Tianjin University studying earthquake engineering, soil–structure interaction, and strong ground motion."
 ---
-
-<section class="hero shell">
-  <div class="hero__portrait-wrap reveal">
-    <img
-      class="hero__portrait"
-      src="{{ site.author.profile_image | relative_url }}"
-      alt="{{ site.author.profile_image_alt }}"
-      width="1122"
-      height="1402"
-    >
-    <div class="hero__availability">
-      <span aria-hidden="true"></span>
-      PhD candidate at Tianjin University
-    </div>
-  </div>
-
-  <div class="hero__content reveal reveal--delay">
-    <p class="eyebrow">{{ site.author.institution }}</p>
-
-    <h1>{{ site.author.name }}</h1>
-
+<section class="hero shell" aria-labelledby="intro-title">
+  <div class="hero__content">
+    <p class="eyebrow">Earthquake engineering · {{ site.author.institution }}</p>
+    <h1 id="intro-title">{{ site.author.name }}</h1>
     <p class="hero__role">{{ site.author.title }}</p>
-
-    <p class="hero__statement">
-      My research focuses on <em>soil–structure interaction, seismic wave propagation,
-      strong ground motion, earthquake engineering, and numerical modeling</em>.
-    </p>
-
+    <p class="hero__statement">{{ site.data.profile.introduction }}</p>
     <p class="hero__bio">{{ site.author.bio }}</p>
-
     <div class="button-row">
-      <a class="button button--primary" href="{{ '/research/' | relative_url }}">
-        Explore my research <span aria-hidden="true">→</span>
-      </a>
-
-      <a class="button button--secondary" href="{{ '/publications/' | relative_url }}">
-        View publications
-      </a>
+      <a class="button button--primary" href="{{ '/publications/' | relative_url }}">Publications <span aria-hidden="true">→</span></a>
+      <a class="button button--secondary" href="{{ '/cv/' | relative_url }}">Academic CV</a>
     </div>
-
-    <div class="social-row" aria-label="Professional profiles">
-      <a href="{{ site.social.github }}" target="_blank" rel="noopener noreferrer">GitHub</a>
-      <a href="{{ site.social.linkedin }}" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-      <a href="{{ site.social.google_scholar }}" target="_blank" rel="noopener noreferrer">Google Scholar</a>
-      <a href="{{ site.social.researchgate }}" target="_blank" rel="noopener noreferrer">ResearchGate</a>
-      <a href="{{ site.social.orcid }}" target="_blank" rel="noopener noreferrer">ORCID</a>
-      <a href="mailto:{{ site.author.email }}">Email</a>
-    </div>
+    <nav class="social-row" aria-label="Academic and professional profiles">{% include social-links.html %}</nav>
   </div>
+  <figure class="hero__portrait-wrap">
+    <img class="hero__portrait" src="{{ site.author.profile_image | relative_url }}" alt="{{ site.author.profile_image_alt | escape }}" width="560" height="700" fetchpriority="high">
+    <figcaption>{{ site.author.institution }}<br>{{ site.author.location }}</figcaption>
+  </figure>
 </section>
 
-<section class="signal-strip" aria-label="Professional snapshot">
-  <div class="shell signal-grid signal-grid--compact">
-    <div>
-      <strong>{{ site.data.publications | size }}</strong>
-      <span>Publications listed</span>
-    </div>
-
-    <div>
-      <strong>{{ site.projects | size }}</strong>
-      <span>Projects listed</span>
-    </div>
-
+<section class="section shell home-research" aria-labelledby="research-title">
+  <div class="section-heading">
+    <div><p class="eyebrow">Research</p><h2 id="research-title">Understanding seismic response</h2></div>
+    <a class="text-link" href="{{ '/research/' | relative_url }}">Research overview <span aria-hidden="true">→</span></a>
   </div>
-</section>
-
-<section class="section shell split-intro reveal">
-  <div>
-    <p class="eyebrow">Now</p>
-    <h2>Current work</h2>
-  </div>
-
-  <div class="prose prose--lead">
-    <p>
-      My current work focuses on nonlinear soil–foundation–structure interaction
-      under near-fault pulse-like ground motions. I use finite-element and
-      finite-difference methods to investigate the response of soil, foundations,
-      and structures under earthquake loading.
-    </p>
-
-    <p>
-      I also work with strong-motion data from the Yunnan region of China and Iran,
-      with a focus on ground-motion characteristics, analysis, and prediction.
-    </p>
-
-    <a class="text-link" href="{{ '/research/' | relative_url }}">
-      Read about my current research <span aria-hidden="true">→</span>
-    </a>
-  </div>
-</section>
-
-<section class="section section--tint">
-  <div class="shell">
-    <div class="section-heading reveal">
-      <div>
-        <p class="eyebrow">Focus</p>
-        <h2>Research interests</h2>
-      </div>
-
-      <p>
-        My research combines earthquake ground motion, soil–structure interaction,
-        and computational modeling.
-      </p>
-    </div>
-
-    <div class="interest-grid">
-      <article class="interest-card reveal">
-        <span>01</span>
-        <h3>Soil–structure interaction</h3>
-        <p>
-          Studying the coupled response of soil, foundations, and structures
-          during earthquakes.
-        </p>
-      </article>
-
-      <article class="interest-card reveal reveal--delay">
-        <span>02</span>
-        <h3>Seismic wave propagation &amp; strong ground motion</h3>
-        <p>
-          Investigating seismic wave propagation and the characteristics of
-          earthquake ground motion.
-        </p>
-      </article>
-
-      <article class="interest-card reveal reveal--delay-2">
-        <span>03</span>
-        <h3>Earthquake engineering &amp; numerical modeling</h3>
-        <p>
-          Applying computational methods to study the seismic response of
-          soil and structural systems.
-        </p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section class="section section--ink">
-  <div class="shell">
-    <div class="section-heading reveal">
-      <div>
-        <p class="eyebrow">Selected output</p>
-        <h2>Recent publications</h2>
-      </div>
-
-      <a class="text-link" href="{{ '/publications/' | relative_url }}">
-        View all publications <span aria-hidden="true">→</span>
-      </a>
-    </div>
-
-    <div class="publication-list publication-list--home">
-      {% assign sorted_publications = site.data.publications | sort: 'year' | reverse %}
-      {% for publication in sorted_publications limit: 3 %}
-        {% include publication-card.html publication=publication compact=true %}
-      {% endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="section shell">
-  <div class="section-heading reveal">
-    <div>
-      <p class="eyebrow">Selected work</p>
-      <h2>Projects</h2>
-    </div>
-
-    <a class="text-link" href="{{ '/projects/' | relative_url }}">
-      View all projects <span aria-hidden="true">→</span>
-    </a>
-  </div>
-
-  <div class="project-grid project-grid--featured">
-    {% assign sorted_projects = site.projects | sort: 'order' %}
-    {% for project in sorted_projects limit: 1 %}
-      {% include project-card.html project=project heading_level=3 %}
+  <p class="research-summary">{{ site.data.profile.current_work }}</p>
+  <div class="interest-grid">
+    {% for interest in site.data.research %}
+    <article class="interest-card"><span aria-hidden="true">0{{ forloop.index }}</span><h3>{{ interest.title }}</h3><p>{{ interest.description }}</p></article>
     {% endfor %}
   </div>
 </section>
+
+{% assign selected_publications = site.data.publications | where: 'featured', true | sort: 'year' | reverse %}
+{% if selected_publications.size > 0 %}
+<section class="section section--tint" aria-labelledby="publications-title">
+  <div class="shell">
+    <div class="section-heading">
+      <div><p class="eyebrow">Research output</p><h2 id="publications-title">Selected publications</h2></div>
+      <a class="text-link" href="{{ '/publications/' | relative_url }}">All publications & manuscripts <span aria-hidden="true">→</span></a>
+    </div>
+    <div class="publication-list">{% for publication in selected_publications limit: 3 %}{% include publication-card.html publication=publication compact=true %}{% endfor %}</div>
+  </div>
+</section>
+{% endif %}
+
+{% assign featured_projects = site.projects | where: 'featured', true | sort: 'order' %}
+{% if featured_projects.size > 0 %}
+<section class="section shell" aria-labelledby="projects-title">
+  <div class="section-heading">
+    <div><p class="eyebrow">Current work</p><h2 id="projects-title">Research projects</h2></div>
+    <a class="text-link" href="{{ '/projects/' | relative_url }}">All projects <span aria-hidden="true">→</span></a>
+  </div>
+  <div class="project-grid">{% for project in featured_projects limit: 3 %}{% include project-card.html project=project heading_level=3 %}{% endfor %}</div>
+</section>
+{% endif %}
+
+{% if site.data.news.size > 0 %}
+<section class="section shell updates-section" aria-labelledby="news-title">
+  <div><p class="eyebrow">Updates</p><h2 id="news-title">News</h2></div>
+  <ul class="timeline">
+    {% assign news = site.data.news | sort: 'date' | reverse %}
+    {% for item in news limit: 5 %}<li><time datetime="{{ item.date | date: '%Y-%m-%d' }}">{{ item.date | date: '%b %Y' }}</time><div>{{ item.text | markdownify }}{% if item.url %}<a href="{{ item.url | relative_url }}">Read more</a>{% endif %}</div></li>{% endfor %}
+  </ul>
+</section>
+{% endif %}

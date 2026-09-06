@@ -3,7 +3,7 @@
 {% assign words = post.content | strip_html | number_of_words %}
 {% assign minutes = words | divided_by: 220 %}
 {% if minutes < 1 %}{% assign minutes = 1 %}{% endif %}
-<article class="post-card reveal" data-post-card data-title="{{ post.title | downcase | escape }}" data-description="{{ post.description | downcase | escape }}" data-tags="{{ post.tags | join: ' ' | downcase | escape }}" data-category="{{ post.category | default: 'notes' | slugify }}">
+<article class="post-card" data-post-card data-title="{{ post.title | downcase | escape }}" data-description="{{ post.description | downcase | escape }}" data-tags="{{ post.tags | join: ' ' | downcase | escape }}" data-category="{{ post.category | default: 'notes' | slugify }}">
   {% if post.image %}
     <a class="post-card__image" href="{{ post.url | relative_url }}" tabindex="-1" aria-hidden="true">
       <img src="{{ post.image | relative_url }}" alt="" loading="lazy" width="960" height="560">

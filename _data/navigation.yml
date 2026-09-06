@@ -7,7 +7,9 @@
   url: /research/
 - label: Publications
   url: /publications/
-- label: Blog
-  url: /blog/
+- label: Projects
+  url: /projects/
+- label: CV
+  url: /cv/
 - label: Contact
   url: /contact/

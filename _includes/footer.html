@@ -1,27 +1,8 @@
 <footer class="site-footer">
   <div class="shell footer-grid">
-    <div>
-      <p class="eyebrow">Explore</p>
-      <nav aria-label="Footer navigation">
-        <a href="{{ '/research/' | relative_url }}">Research</a>
-        <a href="{{ '/publications/' | relative_url }}">Publications</a>
-        <a href="{{ '/blog/' | relative_url }}">Blog</a>
-        <a href="{{ '/about/' | relative_url }}">About</a>
-      </nav>
-    </div>
-    <div>
-      <p class="eyebrow">Connect</p>
-      <nav aria-label="Social links">
-        <a href="mailto:{{ site.author.email }}">Email</a>
-        <a href="{{ site.social.github }}" target="_blank" rel="me noopener noreferrer">GitHub</a>
-        <a href="{{ site.social.linkedin }}" target="_blank" rel="me noopener noreferrer">LinkedIn</a>
-        <a href="{{ site.social.google_scholar }}" target="_blank" rel="me noopener noreferrer">Google Scholar</a>
-        <a href="{{ site.social.researchgate }}" target="_blank" rel="me noopener noreferrer">ResearchGate</a>
-        <a href="{{ site.social.orcid }}" target="_blank" rel="me noopener noreferrer">ORCID</a>
-      </nav>
-    </div>
+    <div><strong>{{ site.author.name }}</strong><p>{{ site.author.title }}<br>{{ site.author.institution }}</p><a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></div>
+    <nav aria-label="Footer navigation">{% for item in site.data.navigation %}<a href="{{ item.url | relative_url }}">{{ item.label }}</a>{% endfor %}{% if site.posts.size > 0 %}<a href="{{ '/blog/' | relative_url }}">Research notes</a>{% endif %}</nav>
+    <nav aria-label="Academic profiles">{% include social-links.html %}</nav>
   </div>
-  <div class="shell footer-bottom">
-    <span>© {{ site.time | date: '%Y' }} {{ site.author.name }}</span>
-  </div>
+  <div class="shell footer-bottom"><span>© {{ site.time | date: '%Y' }} {{ site.author.name }}</span><a href="{{ '/feed.xml' | relative_url }}">RSS feed</a></div>
 </footer>

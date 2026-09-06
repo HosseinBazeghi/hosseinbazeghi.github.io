@@ -6,7 +6,7 @@ permalink: /projects/
 ---
 <section class="page-shell shell">
   <header class="page-heading">
-    <p class="eyebrow">Portfolio</p>
+    <p class="eyebrow">Research in progress</p>
     <h1>{{ page.title }}</h1>
     <p class="page-deck">{{ page.description }}</p>
   </header>

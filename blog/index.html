@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Blog
+title: Research notes
 description: "Research notes, technical tutorials, field observations, and ideas in progress."
 pagination:
   enabled: true
@@ -12,6 +12,7 @@ pagination:
     <p class="page-deck">{{ page.description }}</p>
   </header>
 
+  {% if site.posts.size > 0 %}
   <div class="filter-bar" data-blog-filters aria-label="Blog filters">
     <label class="search-field">
       <span class="sr-only">Search posts</span>
@@ -44,4 +45,5 @@ pagination:
     {% if paginator.next_page %}<a href="{{ paginator.next_page_path | relative_url }}" aria-label="Next page">→</a>{% endif %}
   </nav>
   {% endif %}
+  {% else %}<p>Research notes will appear here when published. In the meantime, explore my <a href="{{ '/research/' | relative_url }}">research</a> and <a href="{{ '/publications/' | relative_url }}">publications</a>.</p>{% endif %}
 </section>

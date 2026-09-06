@@ -1,0 +1,6 @@
+{% for profile in site.social %}
+  {% if profile[1] and profile[1] != empty %}
+    {% assign label = profile[0] | replace: 'google_scholar', 'Google Scholar' | replace: 'researchgate', 'ResearchGate' | replace: 'github', 'GitHub' | replace: 'linkedin', 'LinkedIn' | replace: 'orcid', 'ORCID' %}
+    <a href="{{ profile[1] | escape }}" rel="me">{{ label }}</a>
+  {% endif %}
+{% endfor %}

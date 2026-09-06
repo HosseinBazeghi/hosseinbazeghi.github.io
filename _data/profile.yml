@@ -1,0 +1,43 @@
+# Shared by the homepage, About page, and academic CV. Markdown is supported.
+introduction: >-
+  I study how earthquake waves interact with soil, foundations, and structures.
+current_work: >-
+  My doctoral research examines nonlinear soil–foundation–structure interaction
+  under near-fault pulse-like ground motions. I use finite-element and
+  finite-difference methods to investigate soil nonlinearity, foundation
+  flexibility, and wave incidence.
+background: >-
+  I am a PhD candidate in Civil Engineering at Tianjin University, working in
+  the Strong Motion Observation and Simulation Laboratory. My research combines
+  numerical simulation, seismic wave propagation, strong-motion data analysis,
+  and field measurements.
+education:
+  - title: PhD Candidate in Civil Engineering
+    institution: Tianjin University
+    location: Tianjin, China
+    description: >-
+      Research in soil–structure interaction, seismic wave propagation,
+      near-fault ground motion, and numerical modeling.
+      Supervisor: Prof. Maria I. Todorovska (Tianjin University).
+      Advisor: Prof. Mihailo D. Trifunac (University of Southern California).
+  - title: Master of Science in Structural Engineering
+    institution: University of Guilan
+    location: Guilan, Iran
+    description: >-
+      Thesis: *Contribution of Torsional Excitation to the Out-of-Plane Response of Structures*.
+      Supervisor: Prof. Reza Jalali (University of Guilan).
+      Advisors: Prof. Mihailo D. Trifunac (University of Southern California)
+      and Prof. Vlado Gičev (Goce Delčev University).
+experience:
+  - title: Research and field measurements
+    institution: Strong Motion Observation and Simulation Laboratory
+    description: >-
+      Structural health monitoring, analysis of continuous seismic records,
+      field measurements of buildings and ground vibrations, and maintenance
+      of seismic instrumentation and monitoring systems.
+# Add entries using title, institution, date (optional), and description.
+# Empty sections are omitted automatically.
+awards: []
+teaching: []
+talks: []
+service: []

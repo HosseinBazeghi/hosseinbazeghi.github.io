@@ -17,7 +17,7 @@ author:
   email: "bazeghi.hossein@gmail.com"
   location: "Tianjin, China"
   bio: "I am a PhD candidate in Tianjin University's Strong Motion Observation and Simulation Laboratory, where I investigate soil–structure interaction, seismic wave propagation, and strong ground motion through earthquake-engineering analysis and numerical modeling."
-  profile_image: "/assets/images/hossein-bazeghi-kisomi.png"
+  profile_image: "/assets/images/hossein-bazeghi-kisomi.jpg"
   profile_image_alt: "Portrait of Hossein Bazeghi Kisomi"
 
 social:
@@ -27,8 +27,8 @@ social:
   google_scholar: "https://scholar.google.com/citations?user=nd6QsZEAAAAJ&hl=en"
   orcid: "https://orcid.org/0000-0002-2832-7174"
 
-cv_path: "/assets/documents/cv.pdf"
-default_social_image: "/assets/images/academic-og.png"
+cv_path: null # Set to /assets/documents/cv.pdf after uploading your real CV.
+default_social_image: "/assets/images/academic-og.jpg"
 
 # ------------------------------------------------------------
 # Jekyll behavior
@@ -54,6 +54,7 @@ defaults:
       type: "pages"
     values:
       layout: page
+      image: /assets/images/academic-og.jpg
   - scope:
       path: ""
       type: "posts"
@@ -88,4 +89,8 @@ exclude:
   - Gemfile.lock
   - README.md
   - LICENSE
+  - docs
+  - scripts
+  - tmp
+  - .codex-ruby-qa
   - vendor

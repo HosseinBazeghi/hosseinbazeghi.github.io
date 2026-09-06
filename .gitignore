@@ -8,3 +8,6 @@ vendor/
 Thumbs.db
 tmp/
 
+
+.codex-ruby-qa/
+.bundle/

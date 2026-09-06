@@ -2,7 +2,7 @@
 layout: default
 ---
 <article>
-  <header class="project-hero shell">
+  <header class="project-hero shell{% unless page.image %} project-hero--text{% endunless %}">
     <div>
       <a class="back-link" href="{{ '/projects/' | relative_url }}">← All projects</a>
       <p class="eyebrow">{{ page.date_range }}{% if page.status %} · {{ page.status }}{% endif %}</p>

@@ -1,6 +1,14 @@
 (function () {
   'use strict';
 
+  function copyText(text, button, label) {
+    if (!navigator.clipboard) { button.textContent = 'Select text to copy'; return; }
+    navigator.clipboard.writeText(text).then(function () {
+      button.textContent = 'Copied';
+      window.setTimeout(function () { button.textContent = label; }, 1600);
+    }).catch(function () { button.textContent = 'Select text to copy'; });
+  }
+
   var root = document.documentElement;
   var body = document.body;
   var navToggle = document.querySelector('[data-nav-toggle]');
@@ -26,7 +34,7 @@
       navToggle.setAttribute('aria-label', open ? 'Open navigation' : 'Close navigation');
       nav.classList.toggle('is-open', !open);
     });
-    nav.querySelectorAll('a').forEach(function (link) { link.addEventListener('click', closeNav); });
+    nav.querySelectorAll('a').forEach(function (link) { link.addEventListener('click', function () { closeNav(false); }); });
     window.addEventListener('resize', function () {
       if (window.innerWidth > 1072) closeNav(false);
     });
@@ -39,7 +47,7 @@
   function syncTheme(theme) {
     var isDark = theme === 'dark';
     root.dataset.theme = isDark ? 'dark' : 'light';
-    if (themeColor) themeColor.setAttribute('content', isDark ? '#0e1820' : '#f5f3ed');
+    if (themeColor) themeColor.setAttribute('content', isDark ? '#0e1820' : '#fafaf7');
     if (themeToggle) {
       var action = isDark ? 'Switch to light mode' : 'Switch to dark mode';
       themeToggle.setAttribute('aria-label', action);
@@ -75,21 +83,6 @@
       closeLightbox();
     }
   });
-
-  var revealItems = document.querySelectorAll('.reveal');
-  if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    var revealObserver = new IntersectionObserver(function (entries, observer) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.08 });
-    revealItems.forEach(function (item) { revealObserver.observe(item); });
-  } else {
-    revealItems.forEach(function (item) { item.classList.add('is-visible'); });
-  }
 
   // Automatic table of contents for posts and project pages.
   document.querySelectorAll('[data-toc]').forEach(function (toc) {
@@ -137,34 +130,18 @@
     button.className = 'copy-button';
     button.textContent = 'Copy';
     button.addEventListener('click', function () {
-      navigator.clipboard.writeText(code.textContent).then(function () {
-        button.textContent = 'Copied';
-        window.setTimeout(function () { button.textContent = 'Copy'; }, 1600);
-      });
+      copyText(code.textContent, button, 'Copy');
     });
     pre.appendChild(button);
   });
 
-  // Publication citation drawers and BibTeX copying.
-  document.querySelectorAll('[data-citation-toggle]').forEach(function (button) {
-    button.addEventListener('click', function () {
-      var panel = document.getElementById(button.dataset.citationToggle);
-      if (!panel) return;
-      var expanded = button.getAttribute('aria-expanded') === 'true';
-      button.setAttribute('aria-expanded', String(!expanded));
-      button.textContent = expanded ? 'Cite' : 'Hide citation';
-      panel.hidden = expanded;
-    });
-  });
+  // Native details elements provide citations without JavaScript.
   document.querySelectorAll('[data-copy-target]').forEach(function (button) {
     button.addEventListener('click', function () {
       var panel = document.getElementById(button.dataset.copyTarget);
       var code = panel && panel.querySelector('code');
       if (!code) return;
-      navigator.clipboard.writeText(code.textContent).then(function () {
-        button.textContent = 'Copied';
-        window.setTimeout(function () { button.textContent = 'Copy BibTeX'; }, 1600);
-      });
+      copyText(code.textContent, button, 'Copy BibTeX');
     });
   });
 
@@ -221,6 +198,7 @@
     lightboxImage.src = trigger.dataset.src;
     lightboxImage.alt = trigger.dataset.alt || '';
     lightboxCaption.textContent = trigger.dataset.caption || '';
+    document.querySelectorAll('body > header, body > main, body > footer').forEach(function (element) { element.inert = true; });
     lightbox.classList.add('is-open');
     lightbox.setAttribute('aria-hidden', 'false');
     body.classList.add('is-locked');
@@ -228,16 +206,18 @@
   }
   function closeLightbox() {
     if (!lightbox || !lightbox.classList.contains('is-open')) return;
+    document.querySelectorAll('body > header, body > main, body > footer').forEach(function (element) { element.inert = false; });
     lightbox.classList.remove('is-open');
     lightbox.setAttribute('aria-hidden', 'true');
     body.classList.remove('is-locked');
-    lightboxImage.src = '';
+    lightboxImage.removeAttribute('src');
     if (lastFocused) lastFocused.focus();
   }
   document.querySelectorAll('[data-lightbox-trigger]').forEach(function (trigger) {
     trigger.addEventListener('click', function () { openLightbox(trigger); });
   });
   if (lightbox) {
+    lightbox.addEventListener('keydown', function (event) { if (event.key === 'Tab') { event.preventDefault(); lightbox.querySelector('[data-lightbox-close]').focus(); } });
     lightbox.querySelector('[data-lightbox-close]').addEventListener('click', closeLightbox);
     lightbox.addEventListener('click', function (event) { if (event.target === lightbox) closeLightbox(); });
   }
@@ -268,13 +248,16 @@
         if (show) visible += 1;
       });
       if (empty) empty.hidden = visible !== 0;
+      var status = document.querySelector('[data-filter-status]');
+      if (status) status.textContent = visible + ' of ' + items.length + ' publications';
     }
+    apply();
     if (search) search.addEventListener('input', apply);
     if (select) select.addEventListener('change', apply);
     buttons.forEach(function (button) {
       button.addEventListener('click', function () {
         activeButton = button.dataset.filterButton;
-        buttons.forEach(function (candidate) { candidate.classList.toggle('is-active', candidate === button); });
+        buttons.forEach(function (candidate) { candidate.classList.toggle('is-active', candidate === button); candidate.setAttribute('aria-pressed', String(candidate === button)); });
         apply();
       });
     });
@@ -284,10 +267,7 @@
 
   document.querySelectorAll('[data-copy-url]').forEach(function (button) {
     button.addEventListener('click', function () {
-      navigator.clipboard.writeText(window.location.href).then(function () {
-        button.textContent = 'Copied';
-        window.setTimeout(function () { button.textContent = 'Copy link'; }, 1600);
-      });
+      copyText(window.location.href, button, 'Copy link');
     });
   });
 }());
