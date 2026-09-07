@@ -446,7 +446,7 @@ figcaption { margin-top: .7rem; color: var(--ink-faint); font-size: .82rem; line
 .contact-card h2 { font-size: 1.3rem; line-height: 1.25; }
 .profile-links { display: grid; gap: .45rem; }
 .profile-links a { width: fit-content; }
-.contact-card--primary { display: flex; flex-direction: column; justify-content: space-between; border-top: 3px solid var(--teal); }
+.contact-card--primary { display: flex; flex-direction: column; justify-content: space-between; }
 
 /* Footer */
 .site-footer { padding-top: 3.25rem; background: var(--paper-raised); border-top: 1px solid var(--line); }
