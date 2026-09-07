@@ -417,6 +417,7 @@ figcaption { margin-top: .7rem; color: var(--ink-faint); font-size: .82rem; line
 .post .article-grid { display: block; max-width: var(--reading); padding-bottom: 2.5rem; }
 .post .article-aside { position: static; margin-bottom: 2rem; padding: 1rem; background: var(--paper-raised); border: 1px solid var(--line); border-radius: var(--radius); }
 .post-content { font-size: 1.125rem; line-height: 1.8; color: var(--ink); }
+.post-content p { text-align: justify; text-align-last: start; hyphens: auto; }
 .post-content p, .post-content ul, .post-content ol { margin-bottom: 1.2em; }
 .post-content > :last-child { margin-bottom: 0; }
 .post-content h2, .post-content h3, .post-content h4 { margin-top: 2em; line-height: 1.3; }
