@@ -113,6 +113,8 @@ This is a public blog, not a private notebook. A draft is omitted from the websi
 
 ## Figures and media
 
+Blog posts include a browser read-aloud control. Visitors click Listen to begin, then Pause, Resume, or Stop. Select the speed before starting. It reads article text and skips code blocks and interface controls. Playback stops when leaving the page. The control is hidden when speech synthesis is unsupported, and voice availability depends on the visitor's browser/device. No audio files or additional service configuration are needed.
+
 Use descriptive alt text and compressed images. Reusable includes:
 
 ```liquid
