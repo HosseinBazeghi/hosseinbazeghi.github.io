@@ -59,6 +59,19 @@ description: "Hossein Bazeghi Kisomi — PhD candidate at Tianjin University stu
 </section>
 {% endif %}
 
+<section class="section section--tint" aria-labelledby="blog-title">
+  <div class="shell">
+    <div class="section-heading">
+      <div><p class="eyebrow">Life & research</p><h2 id="blog-title">From the blog</h2></div>
+      <a class="text-link" href="{{ '/blog/' | relative_url }}">Visit the blog <span aria-hidden="true">→</span></a>
+    </div>
+    <p class="blog-introduction">{{ site.data.blog.description }}</p>
+    {% if site.posts.size > 0 %}
+    <div class="post-grid">{% for post in site.posts limit: 2 %}{% include post-card.html post=post heading_level=3 %}{% endfor %}</div>
+    {% else %}<p class="blog-introduction">{{ site.data.blog.introduction }}</p>{% endif %}
+  </div>
+</section>
+
 {% if site.data.news.size > 0 %}
 <section class="section shell updates-section" aria-labelledby="news-title">
   <div><p class="eyebrow">Updates</p><h2 id="news-title">News</h2></div>

@@ -395,6 +395,8 @@ figcaption { margin-top: .7rem; color: var(--ink-faint); font-size: .82rem; line
 .lightbox__close { position: absolute; top: .8rem; right: 1rem; width: 2.7rem; height: 2.7rem; padding: 0; background: transparent; color: #fff; border: 1px solid #71818a; border-radius: 50%; font-size: 1.5rem; cursor: pointer; }
 
 /* Blog and project detail */
+.blog-introduction { max-width: var(--reading); color: var(--ink-soft); margin-bottom: 1.5rem; }
+.post-card .eyebrow { color: var(--teal-dark); font-size: .75rem; }
 .post-header { max-width: 58rem; padding-top: clamp(3.75rem, 6vw, 6rem); padding-bottom: 2.5rem; }
 .back-link { display: inline-block; margin-bottom: 2rem; color: var(--ink-soft); font-size: .875rem; font-weight: 680; text-decoration: none; }
 .post-byline { display: flex; flex-wrap: wrap; gap: .55rem 1.3rem; margin-top: 1.5rem; color: var(--ink-faint); font-size: .875rem; }

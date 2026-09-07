@@ -13,7 +13,8 @@ A lightweight Jekyll website published with GitHub Pages. Markdown and YAML hold
 | Publications and citations | `_data/publications.yml` |
 | Projects | One Markdown file per project in `_projects/` |
 | News | `_data/news.yml` |
-| Research notes | Dated Markdown files in `_posts/` |
+| Blog posts | Dated Markdown files in `_posts/` |
+| Blog introduction | `_data/blog.yml` |
 | Navigation | `_data/navigation.yml` |
 | PDFs and slides | `assets/documents/` |
 | Figures and photographs | `assets/figures/`, `assets/images/` |
@@ -86,25 +87,29 @@ Edit `_data/profile.yml`. Entries use `title`, `institution`, optional `location
 
 Upload your actual PDF to `assets/documents/cv.pdf`, then set `cv_path: "/assets/documents/cv.pdf"` in `_config.yml`. The download button stays hidden while the path is null. The web CV also has browser print styling. No placeholder CV is published.
 
-## Research notes
+## Blog: personal life and research life
 
-Create `_posts/YYYY-MM-DD-descriptive-title.md`:
+Copy `docs/blog-post-template.md` to `_posts/YYYY-MM-DD-descriptive-title.md`, or create a file like this:
 
 ```markdown
 ---
-title: "Research note title"
+title: "A thought from this week"
 description: "Short summary."
-date: 2026-09-06 09:00:00 +0000
-category: Methods
-tags: [earthquake-engineering, modeling]
-toc: true
+date: 2026-09-07 09:00:00 +0000
+category: Personal life
+tags: []
+toc: false
 math: false
 ---
 
 Write your note in Markdown.
 ```
 
-Set `published: false` for drafts. Posts appear at `/blog/` and in RSS. The footer gains a Research notes link when posts exist; add `/blog/` to navigation if desired. Blog search covers the current page, with six posts per page.
+Write as briefly or as fully as you like: a personal reflection, a research lesson, an experience, or an idea to revisit. Suggested categories are `Personal life`, `Research life`, and `Reflections`; new categories appear automatically in the filter. Images, tags, and headings are optional. Set `toc: true` only for longer entries that need a contents list.
+
+Set `published: false` for drafts, and change it to `true` when ready. Published posts appear in the Blog tab, RSS feed, and the homepage (latest two). Blog search covers the current page, with six posts per page. Edit the shared introduction in `_data/blog.yml`.
+
+This is a public blog, not a private notebook. A draft is omitted from the website but its source remains visible if committed to this public repository; keep private writing outside it.
 
 ## Figures and media
 

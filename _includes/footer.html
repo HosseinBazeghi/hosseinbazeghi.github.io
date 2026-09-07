@@ -1,7 +1,7 @@
 <footer class="site-footer">
   <div class="shell footer-grid">
     <div><strong>{{ site.author.name }}</strong><p>{{ site.author.title }}<br>{{ site.author.institution }}</p><a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></div>
-    <nav aria-label="Footer navigation">{% for item in site.data.navigation %}<a href="{{ item.url | relative_url }}">{{ item.label }}</a>{% endfor %}{% if site.posts.size > 0 %}<a href="{{ '/blog/' | relative_url }}">Research notes</a>{% endif %}</nav>
+    <nav aria-label="Footer navigation">{% for item in site.data.navigation %}<a href="{{ item.url | relative_url }}">{{ item.label }}</a>{% endfor %}</nav>
     <nav aria-label="Academic profiles">{% include social-links.html %}</nav>
   </div>
   <div class="shell footer-bottom"><span>© {{ site.time | date: '%Y' }} {{ site.author.name }}</span><a href="{{ '/feed.xml' | relative_url }}">RSS feed</a></div>
