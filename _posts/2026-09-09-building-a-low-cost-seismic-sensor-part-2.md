@@ -1,7 +1,7 @@
 ---
 title: "Building a Low-Cost Seismic Sensor, Part 2: Let's Start Cooking the Hardware"
 description: "A look at the ingredients behind my homemade seismic sensor, from the Raspberry Pi and ADC board to the three geophones listening for ground motion."
-date: 2026-09-09 09:00:00 +0000
+date: 2026-09-09 00:00:00 +0000
 category: Research life
 tags: [seismic sensor, Raspberry Pi, ADS1256, geophones, electronics, hardware]
 published: true
