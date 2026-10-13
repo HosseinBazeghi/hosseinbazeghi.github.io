@@ -1,12 +1,12 @@
 {% assign pub = include.publication %}
 {% capture highlighted_author %}<strong>{{ site.author.name | escape }}</strong>{% endcapture %}
-<article class="publication-item" data-publication data-type="{{ pub.type | slugify }}" data-year="{{ pub.year }}">
-  <div class="publication-item__year">{{ pub.year }}</div>
+<article class="publication-item" data-publication data-type="{{ pub.type | slugify }}" data-year="{{ pub.year | default: 'Undated' }}">
+  <div class="publication-item__year">{{ pub.year | default: 'Undated' }}</div>
   <div class="publication-item__body">
     <p class="publication-item__type">{{ pub.type }}</p>
     {% if include.compact %}<h3>{{ pub.title }}</h3>{% else %}<h2>{{ pub.title }}</h2>{% endif %}
     <p class="publication-item__authors">{{ pub.authors | escape | replace: site.author.name, highlighted_author }}</p>
-    <p class="publication-item__venue"><em>{{ pub.venue }}</em>{% if pub.volume %}, {{ pub.volume }}{% endif %}{% if pub.issue %}({{ pub.issue }}){% endif %}{% if pub.pages %}: {{ pub.pages }}{% endif %}.</p>
+    <p class="publication-item__venue"><em>{{ pub.venue }}</em>{% if pub.volume %}, {{ pub.volume }}{% endif %}{% if pub.issue %}({{ pub.issue }}){% endif %}{% if pub.pages %}: {{ pub.pages }}{% endif %}.{% if pub.note %} {{ pub.note }}.{% endif %}</p>
     <div class="link-cluster">
       {% if pub.doi %}<a href="{{ pub.doi }}" target="_blank" rel="noopener noreferrer">DOI</a>{% endif %}
       {% if pub.link %}<a href="{{ pub.link }}" target="_blank" rel="noopener noreferrer">Publication</a>{% endif %}

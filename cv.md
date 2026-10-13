@@ -15,7 +15,7 @@ description: "Education, research experience, and scholarly work of Hossein Baze
 
 ## Publications
 
-See the [complete publication record]({{ '/publications/' | relative_url }}), including journal articles, conference papers, and submitted manuscripts, with citations and links.
+See the [complete publication record]({{ '/publications/' | relative_url }}), including journal articles, submitted manuscripts, and manuscripts planned for submission, with citations and links.
 
 {% assign optional_sections = 'awards,teaching,talks,service' | split: ',' %}
 {% for key in optional_sections %}

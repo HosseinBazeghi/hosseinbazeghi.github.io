@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Publications
-description: "Peer-reviewed articles, conference papers, and submitted manuscripts by Hossein Bazeghi Kisomi."
+description: "Peer-reviewed articles, submitted manuscripts, and manuscripts planned for submission by Hossein Bazeghi Kisomi."
 ---
 <section class="page-shell shell">
   <header class="page-heading">
@@ -18,8 +18,10 @@ description: "Peer-reviewed articles, conference papers, and submitted manuscrip
     </label>
     <select data-filter-select aria-label="Filter publications by year">
       <option value="all">All years</option>
-      {% assign years = site.data.publications | map: 'year' | uniq | sort | reverse %}
+      {% assign years = site.data.publications | map: 'year' | compact | uniq | sort | reverse %}
       {% for year in years %}<option value="{{ year }}">{{ year }}</option>{% endfor %}
+      {% assign undated_publications = site.data.publications | where_exp: "publication", "publication.year == nil" %}
+      {% if undated_publications.size > 0 %}<option value="Undated">Undated</option>{% endif %}
     </select>
     <button class="filter-button is-active" type="button" data-filter-button="all" aria-pressed="true">All</button>
     {% assign types = site.data.publications | map: 'type' | uniq | sort %}
@@ -28,7 +30,8 @@ description: "Peer-reviewed articles, conference papers, and submitted manuscrip
 
   <p class="filter-status" data-filter-status role="status" aria-live="polite"></p>
   <div class="publication-list">
-    {% assign publications = site.data.publications | sort: 'year' | reverse %}
+    {% assign dated_publications = site.data.publications | where_exp: "publication", "publication.year != nil" | sort: 'year' | reverse %}
+    {% assign publications = dated_publications | concat: undated_publications %}
     {% for publication in publications %}{% include publication-card.html publication=publication %}{% endfor %}
   </div>
   <p class="empty-state" data-filter-empty hidden>No publications match those filters.</p>
